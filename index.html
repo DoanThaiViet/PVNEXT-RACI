@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RACI &amp; Governance Dashboard — PVNext 2025</title>
+<title>RACI &amp; Governance Dashboard — Petrovietnam-NEXT 2025</title>
 
 <!-- Fonts: Sora (display) + Be Vietnam Pro (body) — both ship a Vietnamese subset -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
   --ac-dur:.8s; --ac-stagger:80ms;
 
   /* layout */
-  --rail:212px;
+  --rail:260px;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -53,16 +53,16 @@ html{ scroll-snap-type:y mandatory; scroll-behavior:smooth; }
   max-height:100%; overflow:hidden; padding:var(--slide-padding);
 }
 :root{
-  --title-size:clamp(1.5rem,5vw,4rem);
-  --h2-size:clamp(1.25rem,3.5vw,2.5rem);
-  --h3-size:clamp(1rem,2.5vw,1.75rem);
-  --body-size:clamp(0.75rem,1.5vw,1.125rem);
-  --small-size:clamp(0.65rem,1vw,0.875rem);
-  --slide-padding:clamp(1rem,4vw,4rem);
-  --content-gap:clamp(0.5rem,2vw,2rem);
-  --element-gap:clamp(0.25rem,1vw,1rem);
+  --title-size:clamp(1.8rem, 6vh, 4rem);
+  --h2-size:clamp(1.5rem, 4.5vh, 3rem);
+  --h3-size:clamp(1.2rem, 3.5vh, 2.25rem);
+  --body-size:clamp(1.05rem, 2.8vh, 1.875rem);
+  --small-size:clamp(0.85rem, 2.2vh, 1.5rem);
+  --slide-padding:clamp(1.2rem, 4.5vh, 4.5rem);
+  --content-gap:clamp(0.8rem, 2.5vh, 2.5rem);
+  --element-gap:clamp(0.4rem, 1.5vh, 1.5rem);
 }
-.card,.container,.content-box{ max-width:min(90vw,1000px); max-height:min(80vh,700px); }
+.card,.container,.content-box{ max-width:min(95vw,1400px); max-height:min(88vh,850px); }
 .feature-list,.bullet-list{ gap:clamp(0.4rem,1vh,1rem); }
 .feature-list li,.bullet-list li{ font-size:var(--body-size); line-height:1.4; }
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:clamp(0.5rem,1.5vw,1rem); }
@@ -136,8 +136,8 @@ body{
     linear-gradient(135deg,#FFFFFF 0%, #EEF3F8 100%);
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-.wrap{ width:min(1120px,92%); margin-inline:auto; position:relative; z-index:2; }
-.wrap--wide{ width:min(1280px,95%); }
+.wrap{ width:min(95%, 1650px); margin-inline:auto; position:relative; z-index:2; }
+.wrap--wide{ width:min(98%, 1850px); }
 @media (min-width:1000px){ .slide-content{ padding-left:calc(var(--slide-padding) + var(--rail)); } }
 
 .head-center{ text-align:center; display:flex; flex-direction:column; gap:.45rem; align-items:center; margin-bottom:clamp(.6rem,2.2vh,1.4rem); }
@@ -210,7 +210,7 @@ body{
 .tv-col__head h3{ font-family:var(--font-display); font-size:clamp(1.1rem,2.6vw,1.85rem); color:var(--pvep-navy); font-weight:800; letter-spacing:.02em; }
 .tv-col--gov .tv-col__head h3{ color:var(--pvep-blue); }
 .tv-list{ list-style:none; display:flex; flex-direction:column; gap:.6rem; }
-.tv-list li{ font-size:clamp(.82rem,1.5vw,1.06rem); color:var(--ink-600); padding-left:1.4rem; position:relative; }
+.tv-list li{ font-size:var(--body-size); color:var(--ink-600); padding-left:1.4rem; position:relative; }
 .tv-list li::before{ content:""; position:absolute; left:0; top:.55em; width:8px; height:8px; border-radius:2px; background:var(--ink-500); }
 .tv-list--g li{ color:var(--ink-700); font-weight:500; }
 .tv-list--g li::before{ background:var(--pvep-green); border-radius:50%; }
@@ -226,17 +226,17 @@ body{
 .tri__card:nth-child(2){ border-top-color:var(--caution); }
 .tri__card:nth-child(3){ border-top-color:var(--pvep-green); }
 .tri__k{ display:block; font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); font-size:clamp(1rem,2vw,1.35rem); margin-bottom:.5rem; }
-.tri__card p{ color:var(--ink-600); font-size:clamp(.82rem,1.5vw,1.02rem); line-height:1.45; }
+.tri__card p{ color:var(--ink-600); font-size:var(--body-size); line-height:1.45; }
 
 /* ============================================================
    SLIDE 4A — OECD: approve → SUPERVISE
    ============================================================ */
 .swap{ font-family:var(--font-display); font-weight:700; color:var(--ink-700); font-size:clamp(1.1rem,2.6vw,1.8rem); }
 .swap__old{ color:var(--ink-500); text-decoration-color:var(--danger); text-decoration-thickness:3px; opacity:.75; }
-.swap__new{ font-family:var(--font-display); font-weight:800; color:var(--pvep-blue); font-size:clamp(3rem,9vw,6.4rem); line-height:1; letter-spacing:.02em; margin:.1rem 0 1.3rem; text-shadow:0 16px 42px rgba(0,131,199,.22); position:relative; }
+.swap__new{ font-family:var(--font-display); font-weight:800; color:var(--pvep-blue); font-size:clamp(3rem,9vw,6.4rem); line-height:1; letter-spacing:.02em; margin:1rem 0 1.3rem; text-shadow:0 16px 42px rgba(0,131,199,.22); position:relative; }
 .ac-on .swap__new{ animation:boomIn 1.1s var(--ac-ease-bounce) .15s both, glowPulse 2.6s ease-in-out 1.2s infinite; }
 .quad4a{ display:grid; grid-template-columns:repeat(2,1fr); gap:.8rem; max-width:780px; margin-inline:auto; }
-.mini{ background:#fff; border:1px solid var(--ac-line); border-left:4px solid var(--pvep-green); border-radius:12px; padding:.85rem 1.1rem; color:var(--ink-700); font-weight:500; font-size:clamp(.82rem,1.5vw,1.02rem); text-align:left; box-shadow:0 8px 24px rgba(10,42,74,.05); }
+.mini{ background:#fff; border:1px solid var(--ac-line); border-left:4px solid var(--pvep-green); border-radius:12px; padding:.85rem 1.1rem; color:var(--ink-700); font-weight:500; font-size:var(--body-size); text-align:left; box-shadow:0 8px 24px rgba(10,42,74,.05); }
 
 /* ============================================================
    SLIDE 4B / 12A — Icon cards
@@ -247,10 +247,23 @@ body{
 .cards--3{ grid-template-columns:repeat(3,1fr); }
 .card4{ background:#fff; border:1px solid var(--ac-line); border-radius:16px; padding:clamp(1rem,2vw,1.4rem); box-shadow:0 12px 34px rgba(10,42,74,.06); transition:transform .3s, box-shadow .3s, border-color .3s; display:flex; flex-direction:column; gap:.5rem; }
 .card4:hover{ transform:translateY(-6px); border-color:var(--pvep-blue); box-shadow:0 22px 50px rgba(0,131,199,.18); }
-.card4__ic{ width:46px; height:46px; border-radius:12px; display:grid; place-content:center; background:linear-gradient(135deg,rgba(0,131,199,.13),rgba(0,176,80,.13)); color:var(--pvep-blue); }
-.card4__ic svg{ width:26px; height:26px; }
+.card4__ic{ width:46px; height:46px; border-radius:12px; display:grid; place-content:center; background:linear-gradient(135deg,rgba(0,131,199,.13),rgba(0,176,80,.13)); color:var(--pvep-blue); transition:background 0.4s var(--ac-ease), color 0.4s var(--ac-ease), transform 0.4s var(--ac-ease-bounce), box-shadow 0.4s var(--ac-ease); }
+
+/* Global hover highlight cho các box */
+.tri__card, .dom, .mini, .duo__card, .kpis__item, .kpi, .card3, .step, .chip {
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.tri__card:hover, .dom:hover, .mini:hover, .duo__card:hover, .kpis__item:hover, .kpi:hover, .card3:hover, .step:hover, .chip:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(0,131,199,.18) !important;
+  border-color: var(--pvep-blue) !important;
+  z-index: 10;
+}
+.card4__ic svg{ width:26px; height:26px; transition:transform 0.4s var(--ac-ease-bounce); }
+.card4:hover .card4__ic{ background:linear-gradient(135deg,var(--pvep-blue),var(--pvep-green)); color:#fff; transform:scale(1.08); box-shadow:0 6px 16px rgba(0,131,199,.25); }
+.card4:hover .card4__ic svg{ transform:rotate(12deg) scale(1.15); }
 .card4 h4{ font-family:var(--font-display); color:var(--pvep-navy); font-weight:800; font-size:clamp(.95rem,1.8vw,1.2rem); }
-.card4 p{ color:var(--ink-600); font-size:clamp(.74rem,1.3vw,.92rem); line-height:1.4; }
+.card4 p{ color:var(--ink-600); font-size:var(--small-size); line-height:1.4; }
 @media (max-width:780px){ .cards--4{ grid-template-columns:repeat(2,1fr); } }
 
 /* ============================================================
@@ -263,17 +276,19 @@ body{
 .ks-node--bot{ background:#fff; color:var(--pvep-blue); border:2px solid var(--pvep-blue); box-shadow:0 12px 30px rgba(0,131,199,.18); }
 .ks-link{ width:40px; height:clamp(54px,11vh,110px); }
 .ks-list{ list-style:none; display:flex; flex-direction:column; gap:.7rem; }
-.ks-list li{ background:#fff; border:1px solid var(--ac-line); border-left:4px solid var(--pvep-blue); border-radius:12px; padding:.8rem 1.1rem; color:var(--ink-700); font-weight:500; font-size:clamp(.85rem,1.6vw,1.08rem); box-shadow:0 8px 22px rgba(10,42,74,.05); }
+.ks-list li{ background:#fff; border:1px solid var(--ac-line); border-left:4px solid var(--pvep-blue); border-radius:12px; padding:.8rem 1.1rem; color:var(--ink-700); font-weight:500; font-size:var(--body-size); box-shadow:0 8px 22px rgba(10,42,74,.05); }
 
 /* ============================================================
    SLIDE 6 — Challenges (domino) + punchline
    ============================================================ */
 .domino{ display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:clamp(.4rem,1.2vw,.9rem); align-items:stretch; margin:clamp(.6rem,2vh,1.2rem) 0; }
-.dom{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; padding:clamp(.9rem,2vw,1.4rem); box-shadow:0 10px 30px rgba(10,42,74,.06); }
+.domino:hover .dom{ transform:scale(0.92); opacity:0.5; filter:grayscale(80%); }
+.dom{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; padding:clamp(.9rem,2vw,1.4rem); box-shadow:0 10px 30px rgba(10,42,74,.06); transition:transform .4s ease, opacity .4s ease, filter .4s ease, box-shadow .4s ease; }
+.domino .dom:hover{ transform:scale(1.08) translateY(-8px) !important; opacity:1 !important; filter:grayscale(0%) !important; z-index:20; box-shadow:0 25px 60px rgba(0,131,199,.25) !important; }
 .dom--bad{ border-color:rgba(220,38,38,.4); }
 .dom__k{ display:block; font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); font-size:clamp(.95rem,1.9vw,1.3rem); margin-bottom:.4rem; }
 .dom--bad .dom__k{ color:var(--danger); }
-.dom p{ color:var(--ink-600); font-size:clamp(.78rem,1.4vw,.98rem); line-height:1.4; }
+.dom p{ color:var(--ink-600); font-size:var(--small-size); line-height:1.4; }
 .dom__arr{ display:flex; align-items:center; color:var(--ink-500); font-size:clamp(1.2rem,3vw,2rem); font-family:var(--font-display); }
 .punch{ font-family:var(--font-display); font-weight:700; color:var(--pvep-navy); text-align:center; font-size:clamp(1.2rem,3.4vw,2.4rem); line-height:1.3; max-width:24ch; margin:clamp(.8rem,3vh,1.8rem) auto 0; font-style:italic; }
 .punch::before{ content:""; display:block; width:62px; height:4px; border-radius:99px; background:linear-gradient(90deg,var(--pvep-blue),var(--pvep-green)); margin:0 auto .9rem; }
@@ -282,7 +297,7 @@ body{
    SLIDE 7 — Static → Dashboard (keystone)
    ============================================================ */
 .ba{ display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(.8rem,2vw,1.6rem); align-items:center; margin-top:clamp(.5rem,2vh,1.1rem); }
-.ba__side{ background:#fff; border:1px solid var(--ac-line); border-radius:18px; padding:clamp(1rem,2.4vw,1.6rem); box-shadow:0 14px 40px rgba(10,42,74,.07); position:relative; min-height:clamp(210px,36vh,330px); display:flex; flex-direction:column; gap:.8rem; }
+.ba__side{ background:#fff; border:1px solid var(--ac-line); border-radius:18px; padding:clamp(1rem,2.4vw,1.6rem); box-shadow:0 14px 40px rgba(10,42,74,.07); position:relative; min-height:clamp(280px,45vh,450px); display:flex; flex-direction:column; gap:.8rem; }
 .ba__before{ filter:saturate(.7); }
 .ba__after{ border-color:rgba(0,131,199,.35); box-shadow:0 18px 50px rgba(0,131,199,.14); }
 .ba__lbl{ font-family:var(--font-display); font-weight:800; letter-spacing:.14em; font-size:.72rem; text-transform:uppercase; }
@@ -291,7 +306,7 @@ body{
 .doc{ width:46px; height:62px; background:repeating-linear-gradient(0deg,#e2e8f0,#e2e8f0 2px,#fff 2px,#fff 8px); border:1px solid #cbd5e1; border-radius:4px; transform:rotate(-4deg); box-shadow:0 6px 14px rgba(10,42,74,.1); }
 .doc:nth-child(2){ transform:rotate(3deg) translateY(-4px); } .doc:nth-child(3){ transform:rotate(-1deg); }
 .ba__pts{ list-style:none; display:flex; flex-direction:column; gap:.35rem; }
-.ba__pts li{ font-size:clamp(.76rem,1.4vw,.96rem); color:var(--ink-600); padding-left:1.2rem; position:relative; }
+.ba__pts li{ font-size:var(--body-size); color:var(--ink-600); padding-left:1.2rem; position:relative; }
 .ba__pts li::before{ content:"–"; position:absolute; left:0; color:var(--ink-500); }
 .ba__pts--g li{ color:var(--ink-700); } .ba__pts--g li::before{ content:"✓"; color:var(--pvep-green); font-weight:700; }
 .ba__mid{ display:flex; align-items:center; justify-content:center; }
@@ -300,9 +315,9 @@ body{
 .ac-on .ba__arrow::after{ animation:sweepX 2.2s var(--ac-ease) infinite; animation-delay:.6s; }
 @keyframes sweepX{ to{ transform:translateX(120%); } }
 .mini-dash{ flex:1; display:flex; align-items:center; gap:1rem; justify-content:center; background:linear-gradient(135deg,rgba(0,131,199,.06),rgba(0,176,80,.05)); border-radius:12px; padding:1rem; }
-.md-bars{ display:flex; align-items:flex-end; gap:.4rem; height:clamp(74px,13vh,116px); }
+.md-bars{ display:flex; align-items:flex-end; gap:.4rem; height:clamp(100px,20vh,180px); }
 .md-bar{ width:14px; align-self:flex-end; border-radius:5px 5px 0 0; background:linear-gradient(180deg,var(--pvep-blue),#005f91); }
-.md-ring{ width:clamp(68px,9vw,96px); height:auto; transform:rotate(-90deg); }
+.md-ring{ width:clamp(90px,12vw,150px); height:auto; transform:rotate(-90deg); }
 .md-track{ fill:none; stroke:var(--ac-track); stroke-width:12; }
 .md-val{ fill:none; stroke:var(--pvep-green); stroke-width:12; stroke-linecap:round; }
 
@@ -312,7 +327,7 @@ body{
 .pb-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; margin-bottom:.7rem; flex-wrap:wrap; }
 .pb-filters{ display:flex; gap:.5rem; flex-wrap:wrap; }
 .fchip{ font-size:.74rem; font-weight:600; color:var(--pvep-blue); background:rgba(0,131,199,.10); border:1px solid rgba(0,131,199,.25); padding:.35rem .8rem; border-radius:999px; }
-.pb-frame{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; overflow:hidden; box-shadow:0 22px 60px rgba(10,42,74,.16); height:clamp(280px,56vh,600px); display:flex; flex-direction:column; }
+.pb-frame{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; overflow:hidden; box-shadow:0 22px 60px rgba(10,42,74,.16); height:clamp(350px,70vh,850px); display:flex; flex-direction:column; }
 .pb-frame__bar{ display:flex; align-items:center; gap:.5rem; padding:.5rem .9rem; background:#f1f5f9; border-bottom:1px solid var(--ac-line); }
 .pbdot{ width:11px; height:11px; border-radius:50%; }
 .pbdot:nth-child(1){ background:#f87171; } .pbdot:nth-child(2){ background:#fbbf24; } .pbdot:nth-child(3){ background:#34d399; }
@@ -347,7 +362,7 @@ body{
    ============================================================ */
 .steps5{ position:relative; padding:1.6rem .5rem 1rem; margin-top:.6rem; }
 .s5-track{ position:absolute; top:calc(1.6rem + 30px); left:9%; right:9%; height:5px; border-radius:99px; background:var(--ac-track); }
-.s5-fill{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--pvep-blue),var(--pvep-green)); }
+.s5-fill{ display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--pvep-blue),var(--pvep-green)); }
 .s5{ position:relative; display:flex; justify-content:space-between; gap:.4rem; }
 .s5__step{ display:flex; flex-direction:column; align-items:center; gap:.55rem; flex:1; z-index:1; }
 .s5__step b{ width:clamp(46px,6vw,62px); height:clamp(46px,6vw,62px); border-radius:50%; display:grid; place-content:center; background:#fff; color:var(--pvep-blue); font-family:var(--font-display); font-weight:800; font-size:clamp(1.05rem,2.2vw,1.5rem); border:4px solid var(--pvep-blue); box-shadow:0 8px 22px rgba(0,131,199,.18); }
@@ -367,7 +382,7 @@ body{
 .duo__no{ font-family:var(--font-display); font-size:clamp(1.6rem,3.4vw,2.4rem); color:var(--pvep-blue); font-weight:800; }
 .duo__card--g .duo__no{ color:var(--pvep-green); }
 .duo__card h3{ font-family:var(--font-display); color:var(--pvep-navy); font-weight:800; font-size:clamp(1.05rem,2.2vw,1.5rem); margin:.3rem 0 .5rem; }
-.duo__card p{ color:var(--ink-600); font-size:clamp(.8rem,1.5vw,1rem); line-height:1.45; }
+.duo__card p{ color:var(--ink-600); font-size:var(--body-size); line-height:1.45; }
 .duo__plus{ display:flex; flex-direction:column; align-items:center; gap:.35rem; font-family:var(--font-display); font-weight:700; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--pvep-blue); }
 .rt-dot{ width:14px; height:14px; border-radius:50%; background:var(--pvep-green); }
 .ac-on .rt-dot{ animation:ping 1.6s ease-out infinite; }
@@ -378,10 +393,10 @@ body{
 /* ============================================================
    SLIDE 13 — Conclusion
    ============================================================ */
-.end__lead{ font-size:clamp(1rem,2.4vw,1.6rem); color:var(--ink-700); line-height:1.4; }
+.end__lead{ font-size:var(--h3-size); color:var(--ink-700); line-height:1.4; }
 .end__lead b{ color:var(--pvep-navy); }
 .end__lead--2{ margin-top:.4rem; }
-.end__big{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.8rem,6vw,4.4rem); line-height:1.06; letter-spacing:-.01em; margin:clamp(1.1rem,4vh,2.4rem) 0; position:relative;
+.end__big{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.8rem,6vw,4.4rem); line-height:1.28; padding:0.15em 0.1rem; letter-spacing:-.01em; margin:clamp(1.1rem,4vh,2.4rem) 0; position:relative;
   background:linear-gradient(120deg,var(--pvep-navy),var(--pvep-blue) 45%,var(--pvep-green) 68%,var(--pvep-blue));
   background-size:220% 100%;
   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
@@ -469,7 +484,7 @@ body{
 .ac-on .claude-ic{ animation:ac-spin 7s linear infinite; }
 .claude-btn{ font-family:var(--font-display); font-weight:700; font-size:.82rem; text-decoration:none; color:#fff; background:linear-gradient(135deg,#D97757,#BE5A38); padding:.45rem .95rem; border-radius:999px; box-shadow:0 8px 20px rgba(217,119,87,.38); transition:transform .2s, box-shadow .2s; }
 .claude-btn:hover{ transform:translateY(-2px); box-shadow:0 12px 26px rgba(217,119,87,.5); }
-.ai-note{ display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:clamp(.9rem,3vh,1.8rem); max-width:82ch; margin-inline:auto; padding:.7rem 1.1rem; border-radius:12px; background:rgba(217,119,6,.08); border:1px dashed rgba(217,119,6,.4); font-size:clamp(.74rem,1.3vw,.92rem); }
+.ai-note{ display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; justify-content:center; margin-top:clamp(.9rem,3vh,1.8rem); max-width:82ch; margin-inline:auto; padding:.7rem 1.1rem; border-radius:12px; background:rgba(217,119,6,.08); border:1px dashed rgba(217,119,6,.4); font-size:var(--small-size); }
 .ai-note__txt{ color:var(--ink-600); }
 .ai-note__txt b{ color:#BE5A38; font-weight:800; }
 .claude-ic--sm{ width:24px; height:24px; }
@@ -478,7 +493,7 @@ body{
 
 /* ---- detailed bullet lists for content-rich slides ---- */
 .dlist{ list-style:none; display:flex; flex-direction:column; gap:.3rem; margin-top:.5rem; text-align:left; }
-.dlist li{ position:relative; padding-left:.95rem; font-size:clamp(.6rem,1.02vw,.8rem); line-height:1.32; color:var(--ink-600); }
+.dlist li{ position:relative; padding-left:.95rem; font-size:var(--small-size); line-height:1.32; color:var(--ink-600); }
 .dlist li::before{ content:""; position:absolute; left:0; top:.52em; width:5px; height:5px; border-radius:50%; background:var(--pvep-blue); }
 .dlist--g li::before{ background:var(--pvep-green); }
 .dlist--bad li::before{ background:var(--danger); }
@@ -493,6 +508,58 @@ body{
 .cards--3 .card4 h4{ font-size:clamp(.92rem,1.7vw,1.18rem); }
 /* Slide 7 domino cards: stack header + bullets */
 .dom{ display:flex; flex-direction:column; }
+
+/* ============================================================
+   SLIDE 1 — Minimalist Technical Wind Power Background
+   ============================================================ */
+.hero-motion-bg {
+  position: absolute;
+  left: calc(var(--rail) + 3rem);
+  bottom: 3rem;
+  width: 240px;
+  height: 200px;
+  z-index: 2;
+  pointer-events: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+@media (max-width: 999px) {
+  .hero-motion-bg {
+    left: 2rem;
+  }
+}
+.tech-blueprint-scene {
+  width: 100%;
+  height: 100%;
+}
+
+.rotor-blades-tech {
+  animation: spinRotorSlow 30s linear infinite;
+}
+.rotor-blades-tech--slow {
+  animation: spinRotorSlow 40s linear infinite;
+  animation-delay: -15s;
+}
+@keyframes spinRotorSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cable-flow-line {
+  animation: flowCable 2.5s linear infinite;
+}
+@keyframes flowCable {
+  to { stroke-dashoffset: -20; }
+}
+
+.beacon-light {
+  animation: beaconBlink 2s ease-in-out infinite;
+}
+@keyframes beaconBlink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
 </style>
 </head>
 <body>
@@ -556,7 +623,7 @@ body{
 
 <!-- chapter rail -->
 <nav class="rail" aria-label="Chương">
-  <div class="rail__brand"><span class="rail__logo">P</span><span class="rail__title">PVNext&nbsp;2025</span></div>
+  <div class="rail__brand"><span class="rail__logo">P</span><span class="rail__title">Petrovietnam-NEXT&nbsp;2025</span></div>
   <div class="rail__sub">RACI Governance</div>
   <div class="rail__item" data-chapter="0" data-target="0"><span class="dot"></span><span class="rail__num">01</span>Tổng quan RACI</div>
   <div class="rail__item" data-chapter="1" data-target="3"><span class="dot"></span><span class="rail__num">02</span>Quản trị &amp; Giám sát</div>
@@ -571,17 +638,23 @@ body{
 <div class="hint">← → chuyển slide · Home/End đầu/cuối</div>
 
 <!-- ========================= SLIDE 1 — HERO ========================= -->
-<section class="slide" data-chapter="0">
-  <div class="ambient" aria-hidden="true"><span class="orb orb--1 ac-drift"></span><span class="orb orb--2 ac-drift"></span><span class="grid-glow"></span></div>
-  <div class="slide-content">
+<section class="slide" data-chapter="0" style="background-color: #071A2C;">
+  <!-- VIDEO BACKGROUND -->
+  <div class="video-bg-wrap" style="position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #071A2C;">
+    <video autoplay muted loop playsinline src="assets/offshore-motion.mp4" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: contrast(1.1) brightness(0.9); pointer-events: none;"></video>
+    <div class="video-overlay" style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(7,26,44,0.85) 0%, rgba(11,61,92,0.4) 100%);"></div>
+  </div>
+
+  <div class="slide-content" style="position: relative; z-index: 2;">
     <div class="wrap" style="text-align:center">
-      <div class="eyebrow ac-reveal" style="--i:0">PVNEXT 2025</div>
-      <h1 class="hero__word flash ac-reveal" style="--i:1">RACI</h1>
-      <div class="hero__amp ac-reveal" style="--i:2">&amp; GOVERNANCE DASHBOARD</div>
-      <p class="hero__tag jtype" data-text="Từ bảng phân công công việc → nền tảng quản trị & kiểm soát thẩm quyền">&nbsp;</p>
-      <div class="hero__by ac-reveal" style="--i:4">Đoàn Thái Việt — Ban Kiểm soát Nội bộ PVEP</div>
-      <div class="ac-reveal" style="--i:5">
-        <a class="oecd-ref" href="https://www.oecd.org/corporate/principles-corporate-governance/" target="_blank" rel="noopener">Khung tham chiếu: OECD Principles of Corporate Governance ↗</a>
+      <div class="eyebrow ac-reveal" style="--i:0; color: #60A5FA; letter-spacing: 0.15em; margin-bottom: 1.5rem; text-shadow: 0 4px 12px rgba(0,0,0,0.6);">PETROVIETNAM-NEXT 2025</div>
+      <h1 class="hero__word flash ac-reveal" style="--i:1; color: #FFFFFF; text-shadow: 0 8px 32px rgba(0,0,0,0.6);">RACI</h1>
+      <div class="hero__amp ac-reveal" style="--i:2; color: #E0F2FE; text-shadow: 0 6px 20px rgba(0,0,0,0.5);">&amp; GOVERNANCE DASHBOARD</div>
+      <p class="hero__tag jtype" data-text="Từ bảng phân công công việc → nền tảng quản trị & kiểm soát thẩm quyền" style="color: #93C5FD; text-shadow: 0 4px 12px rgba(0,0,0,0.6);">&nbsp;</p>
+      
+      <div class="hero__by ac-reveal" style="--i:4; color: #FFFFFF; text-shadow: 0 4px 12px rgba(0,0,0,0.6); opacity: 0.9;">Đoàn Thái Việt — Ban Kiểm soát Nội bộ PVEP</div>
+      <div class="ac-reveal" style="--i:5; margin-top: 2rem;">
+        <a class="oecd-ref" href="https://www.oecd.org/corporate/principles-corporate-governance/" target="_blank" rel="noopener" style="color: #FFFFFF; border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);">Khung tham chiếu: OECD Principles of Corporate Governance ↗</a>
       </div>
     </div>
   </div>
@@ -596,8 +669,8 @@ body{
     </div>
     <div class="two-view">
       <div class="tv-col tv-col--ops ac-reveal ac-reveal--left" style="--i:2">
-        <div class="tv-col__head"><span class="tv-tag">Góc nhìn</span><h3>VẬN HÀNH</h3></div>
-        <ul class="tv-list"><li>Ai làm</li><li>Ai phê duyệt</li><li>Ai phối hợp</li><li>Ai nhận thông tin</li></ul>
+         <div class="tv-col__head"><span class="tv-tag">Góc nhìn</span><h3>VẬN HÀNH</h3></div>
+         <ul class="tv-list"><li>Ai làm</li><li>Ai phê duyệt</li><li>Ai phối hợp</li><li>Ai nhận thông tin</li></ul>
       </div>
       <div class="tv-mid ac-pop" style="--i:3">→</div>
       <div class="tv-col tv-col--gov ac-reveal ac-reveal--right" style="--i:4">
@@ -625,32 +698,45 @@ body{
       <span class="chip ac-pop" style="--i:3">NĐ 365</span>
       <span class="chip ac-pop" style="--i:4">NĐ 366</span>
     </div>
-    <div class="tri">
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:6">
+    <div class="tri" style="position:relative;">
+      <!-- Diagram line connecting cards -->
+      <div class="diagram-line ac-reveal" style="--i:5; position:absolute; top:40px; left:10%; right:10%; height:2px; background:var(--pvep-blue); opacity:0.3; z-index:0; display:none;"></div>
+      <style>@media(min-width:768px){.diagram-line{display:block;}}</style>
+
+      <div class="tri__card ac-reveal ac-reveal--up" style="--i:6; position:relative; z-index:1; background:var(--white);">
+        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--pvep-blue); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--pvep-blue);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </div>
         <span class="tri__k">Bối cảnh</span>
         <ul class="dlist">
-          <li>Luật 68 / NĐ 366 mở rộng quyền chủ động của DNNN trong quản lý vốn, đầu tư và tài sản</li>
-          <li>PVN phân cấp mạnh hơn cho PVEP về vay vốn, đầu tư, mua sắm, chuyển nhượng</li>
-          <li>Một số nghiệp vụ trọng yếu có thể xử lý nhanh hơn tại cấp PVEP</li>
-          <li>RACI trở thành công cụ hỗ trợ quản trị phân quyền</li>
+          <li>Luật 68 &amp; NĐ 366 mở rộng tự chủ của DNNN về vốn, tài sản.</li>
+          <li>Petrovietnam phân cấp mạnh cho PVEP (vay vốn, đầu tư, mua sắm).</li>
+          <li>Yêu cầu tối ưu tiến độ xử lý các nghiệp vụ trọng yếu tại cấp PVEP.</li>
+          <li>Cần công cụ quản trị phân quyền rõ ràng và có hệ thống.</li>
         </ul>
       </div>
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:7">
+      <div class="tri__card ac-reveal ac-reveal--up" style="--i:7; position:relative; z-index:1; background:var(--white);">
+        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--warning); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--warning);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </div>
         <span class="tri__k">Thách thức</span>
         <ul class="dlist">
-          <li>Ranh giới thẩm quyền PVN – HĐTV PVEP – TGĐ – Ban chuyên môn cần xác định lại</li>
-          <li>Vay vốn, bảo lãnh, đầu tư, mua sắm, chuyển nhượng: giá trị lớn, rủi ro cao</li>
-          <li>Quy trình nhiều cấp / phòng ban dễ chồng chéo, bỏ sót, kéo dài phê duyệt</li>
-          <li>Quy định nội bộ có thể chưa cập nhật kịp tinh thần phân cấp mới</li>
+          <li>Ranh giới thẩm quyền (Petrovietnam - HĐTV PVEP - Ban chuyên môn) cần định vị lại.</li>
+          <li>Các giao dịch giá trị lớn (đầu tư, vay vốn) tiềm ẩn rủi ro pháp lý cao.</li>
+          <li>Quy trình nhiều cấp dễ chồng chéo, chậm trễ phê duyệt hồ sơ.</li>
+          <li>Hệ thống quy chế nội bộ chưa đồng bộ kịp tinh thần phân cấp mới.</li>
         </ul>
       </div>
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:8">
+      <div class="tri__card ac-reveal ac-reveal--up" style="--i:8; position:relative; z-index:1; background:var(--white);">
+        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--success); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--success);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
         <span class="tri__k">Yêu cầu mới</span>
         <ul class="dlist dlist--g">
-          <li>Chuẩn hóa ma trận "đề xuất – thẩm định – phê duyệt – thực hiện – giám sát"</li>
-          <li>Gắn từng thẩm quyền với hạn mức, điều kiện áp dụng và căn cứ pháp lý</li>
-          <li>Theo dõi trạng thái xử lý, điểm nghẽn và trách nhiệm từng đơn vị</li>
-          <li>Tăng khả năng giám sát sau phân quyền của HĐTV / Ban KSNB</li>
+          <li>Chuẩn hóa luồng: Đề xuất – Thẩm định – Phê duyệt – Thực hiện – Giám sát.</li>
+          <li>Gắn thẩm quyền với hạn mức, điều kiện áp dụng và căn cứ pháp lý.</li>
+          <li>Giám sát trực quan trạng thái, tiến độ và trách nhiệm từng đơn vị.</li>
+          <li>Nâng cao năng lực giám sát sau phân quyền của HĐTV &amp; Ban KSNB.</li>
         </ul>
       </div>
     </div>
@@ -671,10 +757,10 @@ body{
     <h2 class="swap ac-reveal" style="--i:1">HĐTV không chỉ <s class="swap__old">phê duyệt</s></h2>
     <div class="swap__new flash ac-reveal" style="--i:2">GIÁM SÁT</div>
     <div class="quad4a">
-      <div class="mini ac-reveal ac-reveal--up" style="--i:4">Giám sát hoạt động &amp; quản trị rủi ro</div>
-      <div class="mini ac-reveal ac-reveal--up" style="--i:5">Theo dõi thực hiện chiến lược</div>
-      <div class="mini ac-reveal ac-reveal--up" style="--i:6">Đảm bảo kiểm soát nội bộ hiệu quả</div>
-      <div class="mini ac-reveal ac-reveal--up" style="--i:7">Bảo đảm minh bạch &amp; trách nhiệm giải trình</div>
+      <div class="mini">Giám sát hoạt động &amp; quản trị rủi ro</div>
+      <div class="mini">Theo dõi thực hiện chiến lược</div>
+      <div class="mini">Đảm bảo kiểm soát nội bộ hiệu quả</div>
+      <div class="mini">Bảo đảm minh bạch &amp; trách nhiệm giải trình</div>
     </div>
   </div></div>
 </section>
@@ -692,36 +778,36 @@ body{
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
         <h4>Rõ trách nhiệm</h4>
         <ul class="dlist">
-          <li>Làm rõ ai đề xuất, ai thẩm định, ai phê duyệt, ai thực hiện, ai giám sát</li>
-          <li>Tránh "nhiều bên tham gia nhưng không rõ ai chịu trách nhiệm cuối cùng"</li>
-          <li>Đặc biệt quan trọng với đầu tư, vay vốn, mua sắm, chuyển nhượng, phân phối lợi nhuận</li>
+          <li>Định rõ 5 vai trò (R-A-C-I-S) cho mỗi luồng công việc.</li>
+          <li>Tránh chồng chéo hoặc bỏ sót trách nhiệm xử lý cuối cùng.</li>
+          <li>Tập trung vào nghiệp vụ rủi ro cao (Đầu tư, Mua sắm, Vốn).</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:3">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a3 3 0 0 0 3 3h6"/><path d="M6 21v-6"/><circle cx="6" cy="3" r="1.6"/><circle cx="6" cy="21" r="1.6"/><circle cx="18" cy="12" r="1.6"/></svg></div>
         <h4>Phân tách trách nhiệm</h4>
         <ul class="dlist">
-          <li>Tách bạch cấp quyết định, tham mưu, thực hiện và kiểm tra / giám sát</li>
-          <li>Hạn chế xung đột lợi ích; tránh một đầu mối vừa đề xuất – thẩm định – thực hiện</li>
-          <li>Cơ sở rà soát lại phân quyền PVN – HĐTV PVEP – TGĐ – các Ban chuyên môn</li>
+          <li>Tách biệt rõ ràng cấp quyết định, tham mưu và giám sát.</li>
+          <li>Kiểm soát xung đột lợi ích, hạn chế "vừa đề xuất vừa thẩm định".</li>
+          <li>Tối ưu hóa phân cấp giữa Petrovietnam – PVEP – TGĐ – Ban chuyên môn.</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:4">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h4>Minh bạch &amp; truy vết</h4>
         <ul class="dlist">
-          <li>Mỗi bước gắn với căn cứ pháp lý, quy định nội bộ và cấp có thẩm quyền</li>
-          <li>Truy vết được luồng phê duyệt, trạng thái xử lý và đơn vị phụ trách</li>
-          <li>Hỗ trợ kiểm tra sau quyết định: đúng cấp, đúng quy trình, đúng căn cứ</li>
+          <li>Mỗi bước phê duyệt gắn liền với căn cứ pháp lý, quy chế rõ ràng.</li>
+          <li>Truy vết lịch sử duyệt, thời gian xử lý và đơn vị phụ trách.</li>
+          <li>Thuận tiện cho công tác hậu kiểm và thanh kiểm tra.</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:5">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></div>
         <h4>Quản trị dựa trên dữ liệu</h4>
         <ul class="dlist dlist--g">
-          <li>Chuyển ma trận thẩm quyền từ file tĩnh sang dashboard quản trị động</li>
-          <li>Theo dõi điểm nghẽn, nhiệm vụ quá hạn, đầu mối xử lý, quy trình chồng chéo</li>
-          <li>Hỗ trợ HĐTV / Ban KSNB giám sát thời gian thực thay vì rà soát thủ công</li>
+          <li>Số hóa ma trận thẩm quyền tĩnh thành Dashboard động.</li>
+          <li>Nhận diện trực quan điểm nghẽn, chậm trễ, chồng chéo quy trình.</li>
+          <li>Giúp HĐTV &amp; Ban KSNB giám sát hệ thống theo thời gian thực (real-time).</li>
         </ul>
       </div>
     </div>
@@ -761,27 +847,34 @@ body{
     <div class="head-center">
       <div class="eyebrow ac-reveal" style="--i:0">Thách thức tại các dự án / đề án (DADK)</div>
     </div>
-    <div class="domino">
-      <div class="dom ac-reveal ac-reveal--left" style="--i:1">
-        <span class="dom__k">Đặc thù</span>
+    <div class="domino" style="align-items:center;">
+      <div class="dom ac-reveal ac-reveal--left" style="--i:1; background:var(--white); border:2px solid var(--pvep-blue); position:relative;">
+        <div style="position:absolute; top:-24px; left:24px; background:var(--pvep-blue); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,131,199,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <span class="dom__k" style="margin-top:16px;">Đặc thù</span>
         <ul class="dlist">
           <li>Workflow dài, nhiều giai đoạn: ODP/FDP/RFDP, CTĐT, KHLCNT, HSMT, LCNT, hợp đồng, điều chỉnh phát sinh</li>
           <li>Nhiều chủ thể: Đơn vị điều hành, PVEP, Petrovietnam, UBQLV/CQĐDCSH, Bộ ngành, đối tác JOA/PSC</li>
           <li>Hồ sơ phải xin ý kiến nhiều vòng, cập nhật theo phản hồi từng cấp</li>
         </ul>
       </div>
-      <div class="dom__arr ac-pop" style="--i:2">→</div>
-      <div class="dom ac-reveal ac-reveal--left" style="--i:3">
-        <span class="dom__k">Khó khăn</span>
+      <div class="dom__arr ac-pop" style="--i:2; color:var(--pvep-blue); background:rgba(0,131,199,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+      <div class="dom ac-reveal ac-reveal--left" style="--i:3; background:var(--white); border:2px solid var(--warning); position:relative;">
+        <div style="position:absolute; top:-24px; left:24px; background:var(--warning); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(234,88,12,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+        <span class="dom__k" style="margin-top:16px;">Khó khăn</span>
         <ul class="dlist">
           <li>Khó xác định hồ sơ đang ở bước nào, vướng cấp nào, ai chịu trách nhiệm xử lý</li>
           <li>Thẩm quyền phê duyệt thay đổi theo loại việc, giá trị, nguồn vốn, cấp dự án</li>
           <li>Dễ chồng chéo giữa đề xuất, thẩm định, phê duyệt, giám sát và phối hợp</li>
         </ul>
       </div>
-      <div class="dom__arr ac-pop" style="--i:4">→</div>
-      <div class="dom dom--bad ac-reveal ac-reveal--left" style="--i:5">
-        <span class="dom__k">Hệ quả</span>
+      <div class="dom__arr ac-pop" style="--i:4; color:var(--danger); background:rgba(220,38,38,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+      <div class="dom dom--bad ac-reveal ac-reveal--left" style="--i:5; background:var(--white); border:2px solid var(--danger); position:relative;">
+        <div style="position:absolute; top:-24px; left:24px; background:var(--danger); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(220,38,38,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <span class="dom__k" style="margin-top:16px;">Hệ quả</span>
         <ul class="dlist dlist--bad">
           <li>Rủi ro tuân thủ do trình sai cấp, thiếu căn cứ hoặc thiếu bước kiểm soát</li>
           <li>Chậm tiến độ do hồ sơ quay vòng nhiều lần, khó truy vết điểm nghẽn</li>
@@ -889,7 +982,7 @@ body{
         <div class="s5__step s5__step--hot ac-pop" style="--i:6"><b>5</b><span>Đưa lên Power BI</span></div>
       </div>
     </div>
-    <div class="ai-note ac-reveal" style="--i:8">
+    <div class="ai-note">
       <span class="claude-ic claude-ic--sm"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.6l1.9 7.3 7.1-2-5.2 5.1 5.2 5.1-7.1-2L12 22.4l-1.9-7.3-7.1 2 5.2-5.1L3 6.9l7.1 2z"/></svg></span>
       <span class="ai-note__txt">Bảo mật: văn bản pháp luật → dùng AI hỗ trợ bằng <b>Claude Cowork</b> · văn bản nội bộ nhạy cảm → rà soát thủ công</span>
       <a class="claude-btn claude-btn--sm" href="https://claude.ai" target="_blank" rel="noopener">Mở Claude ↗</a>
@@ -913,50 +1006,55 @@ body{
   </div></div>
 </section>
 
-<!-- ========================= SLIDE 12A — PVNext 3 directions ========================= -->
+<!-- ========================= SLIDE 12A — Petrovietnam-NEXT 3 directions ========================= -->
 <section class="slide" data-chapter="4">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal" style="--i:0">PVNext ứng dụng được gì?</div>
+      <div class="eyebrow ac-reveal" style="--i:0">Petrovietnam-NEXT ứng dụng được gì?</div>
       <h2 class="s-title ac-reveal" style="--i:1"><span class="neo">Bắt đầu</span> từ workflow nhỏ nhất</h2>
     </div>
-    <div class="cards cards--3">
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:2">
-        <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></div>
-        <h4>Workflow nội bộ</h4>
+    <div class="cards cards--3" style="position:relative;">
+      <!-- Dashed connecting line -->
+      <svg class="ac-reveal" style="--i:1; position:absolute; top:28px; left:15%; width:70%; height:40px; z-index:0; overflow:visible; display:none;" preserveAspectRatio="none">
+        <path d="M0,0 L300,0 L600,0" stroke="var(--pvep-blue)" stroke-width="2" stroke-dasharray="6 6" fill="none" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <style>@media(min-width:768px){.cards--3 > svg{display:block;}}</style>
+      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:2; position:relative; z-index:1; border-top:4px solid var(--pvep-blue); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+        <div class="card4__ic" style="background:var(--pvep-blue); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></div>
+        <h4 style="text-align:center; color:var(--pvep-blue); margin-bottom:12px;">Workflow nội bộ</h4>
         <ul class="dlist">
-          <li>Chuẩn hóa các luồng việc thường gặp: xin ý kiến, phê duyệt, thanh toán, mua sắm, nhân sự</li>
-          <li>Làm rõ từng bước xử lý, đơn vị chủ trì, đơn vị phối hợp và cấp phê duyệt</li>
-          <li>Giảm phụ thuộc vào kinh nghiệm cá nhân khi xử lý hồ sơ</li>
+          <li>Chuẩn hóa các luồng phê duyệt, thanh toán, mua sắm, nhân sự.</li>
+          <li>Phân định rõ đơn vị chủ trì, đơn vị phối hợp và cấp phê duyệt.</li>
+          <li>Giảm thiểu việc xử lý hồ sơ theo thói quen hoặc kinh nghiệm cá nhân.</li>
         </ul>
       </div>
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:3">
-        <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-        <h4>Tra cứu nhanh quy định</h4>
+      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:3; position:relative; z-index:1; border-top:4px solid var(--pvep-green); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+        <div class="card4__ic" style="background:var(--pvep-green); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h4 style="text-align:center; color:var(--pvep-green); margin-bottom:12px;">Tra cứu nhanh quy định</h4>
         <ul class="dlist">
-          <li>Tra cứu nhanh quy trình, biểu mẫu, cấp thẩm quyền và văn bản áp dụng</li>
-          <li>Xác định đúng hồ sơ cần chuẩn bị, đúng nơi trình, đúng cấp phê duyệt</li>
-          <li>Hạn chế sai sót do dùng nhầm quy định hoặc bỏ sót bước kiểm soát</li>
+          <li>Tra cứu tức thời quy trình, biểu mẫu và thẩm quyền tương ứng.</li>
+          <li>Định vị chính xác nơi trình ký, giảm thiểu trả lại hồ sơ.</li>
+          <li>Loại bỏ rủi ro áp dụng nhầm các quy chế đã hết hiệu lực.</li>
         </ul>
       </div>
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:4">
-        <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a6 6 0 0 1 11 0"/><path d="M18 8v6M15 11h6"/></svg></div>
-        <h4>Hỗ trợ nhân sự mới</h4>
+      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:4; position:relative; z-index:1; border-top:4px solid var(--warning); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
+        <div class="card4__ic" style="background:var(--warning); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a6 6 0 0 1 11 0"/><path d="M18 8v6M15 11h6"/></svg></div>
+        <h4 style="text-align:center; color:var(--warning); margin-bottom:12px;">Hỗ trợ nhân sự mới</h4>
         <ul class="dlist dlist--g">
-          <li>Giúp nhân sự mới hiểu nhanh "việc này đi theo luồng nào"</li>
-          <li>Nhìn được ai phụ trách, ai phối hợp, ai phê duyệt trong từng quy trình</li>
-          <li>Rút ngắn thời gian bàn giao, đào tạo và hòa nhập công việc</li>
+          <li>Giúp nhân viên mới nắm bắt nhanh sơ đồ phân nhiệm và luồng hồ sơ.</li>
+          <li>Tự động hướng dẫn "ai làm gì, gửi ai phê duyệt" trực quan.</li>
+          <li>Rút ngắn thời gian đào tạo nội bộ và bàn giao công việc.</li>
         </ul>
       </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========================= SLIDE 12B — PVNext control directions ========================= -->
+<!-- ========================= SLIDE 12B — Petrovietnam-NEXT control directions ========================= -->
 <section class="slide" data-chapter="4">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal" style="--i:0">PVNext · Hướng kiểm soát</div>
+      <div class="eyebrow ac-reveal" style="--i:0">Petrovietnam-NEXT · Hướng kiểm soát</div>
       <h2 class="s-title ac-reveal" style="--i:1"><span class="neo">Control mindset</span> cho mọi đơn vị</h2>
     </div>
     <div class="duo duo--2">
@@ -976,10 +1074,10 @@ body{
 <section class="slide" data-chapter="5">
   <div class="ambient" aria-hidden="true"><span class="orb orb--1 ac-drift"></span><span class="orb orb--2 ac-drift"></span><span class="grid-glow"></span></div>
   <div class="slide-content"><div class="wrap" style="text-align:center">
-    <p class="end__lead ac-reveal" style="--i:0">RACI hôm nay <b>không chỉ</b> là bảng phân công.</p>
+    <p class="end__lead">RACI hôm nay <b>không chỉ</b> là bảng phân công.</p>
     <p class="end__lead end__lead--2 ac-reveal" style="--i:1">Mà là công cụ <span class="neo">quản trị · kiểm soát thẩm quyền · giám sát · QTRR</span></p>
     <h2 class="end__big flash ac-reveal" style="--i:3">RACI = NỀN TẢNG QUẢN TRỊ SỐ HÓA</h2>
-    <div class="end__thanks ac-reveal" style="--i:5">Trân trọng cảm ơn — Đoàn Thái Việt · PVNext 2025</div>
+    <div class="end__thanks ac-reveal" style="--i:5">Trân trọng cảm ơn — Đoàn Thái Việt · Petrovietnam-NEXT 2025</div>
     <span class="shock"></span><span class="shock shock--2"></span>
     <div class="sparks">
       <span class="spark" style="--dx:-220px;--dy:-150px"></span>
