@@ -465,7 +465,7 @@ body{
 
 /* ---- OECD watermark · reference · governance graph ---- */
 .oecd-wm{ position:absolute; right:clamp(.5rem,3vw,3rem); top:50%; transform:translateY(-50%); z-index:0; text-align:right; pointer-events:none; user-select:none; }
-.oecd-wm__txt{ display:block; font-family:var(--font-display); font-weight:800; font-size:clamp(4.5rem,15vw,12rem); line-height:.78; letter-spacing:.05em; color:transparent; -webkit-text-stroke:2px rgba(0,131,199,.13); }
+.oecd-wm__txt{ display:block; font-family:var(--font-display); font-weight:800; font-size:clamp(4.5rem,15vw,12rem); line-height:.78; letter-spacing:.05em; color:rgba(0,131,199,.08); }
 .oecd-wm__sub{ display:block; font-family:var(--font-display); font-weight:700; letter-spacing:.34em; font-size:clamp(.55rem,1.3vw,.95rem); color:rgba(10,42,74,.16); margin-top:.4rem; }
 .oecd-ref{ display:inline-flex; align-items:center; gap:.4rem; margin-top:.7rem; font-size:clamp(.68rem,1.3vw,.85rem); font-weight:600; color:var(--pvep-blue); text-decoration:none; border:1px solid rgba(0,131,199,.3); background:rgba(0,131,199,.06); padding:.4rem .9rem; border-radius:999px; transition:background .2s, transform .2s; }
 .oecd-ref:hover{ background:rgba(0,131,199,.12); transform:translateY(-1px); }
@@ -649,7 +649,7 @@ body{
   <div class="slide-content" style="position: relative; z-index: 2;">
     <div class="wrap" style="text-align:center">
       <div class="eyebrow ac-reveal" style="--i:0; color: #0284c7; letter-spacing: 0.15em; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(255,255,255,0.8);">PETROVIETNAM-NEXT 2025</div>
-      <h1 class="hero__word flash ac-reveal" style="--i:1; color: #0284c7; text-shadow: 0 4px 20px rgba(255,255,255,1), 0 0 40px rgba(2,132,199,0.4);">RACI</h1>
+      <h1 class="hero__word flash ac-reveal" style="--i:1">RACI</h1>
       <div class="hero__amp ac-reveal" style="--i:2; color: #0369a1; text-shadow: 0 4px 15px rgba(255,255,255,0.9); font-weight: 800;">&amp; GOVERNANCE DASHBOARD</div>
       <p class="hero__tag jtype" data-text="Từ bảng phân công công việc → nền tảng quản trị & kiểm soát thẩm quyền" style="color: #334155; text-shadow: 0 2px 10px rgba(255,255,255,0.9); font-weight: 500;">&nbsp;</p>
       
@@ -779,36 +779,36 @@ body{
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
         <h4>Rõ trách nhiệm</h4>
         <ul class="dlist">
-          <li>Định rõ 5 vai trò (R-A-C-I-S) cho mỗi luồng công việc.</li>
-          <li>Tránh chồng chéo hoặc bỏ sót trách nhiệm xử lý cuối cùng.</li>
-          <li>Tập trung vào nghiệp vụ rủi ro cao (Đầu tư, Mua sắm, Vốn).</li>
+          <li>Xác định rõ vai trò R-A-C-I-S.</li>
+          <li>Tránh chồng chéo hoặc bỏ sót trách nhiệm.</li>
+          <li>Tập trung vào nghiệp vụ rủi ro cao.</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:3">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a3 3 0 0 0 3 3h6"/><path d="M6 21v-6"/><circle cx="6" cy="3" r="1.6"/><circle cx="6" cy="21" r="1.6"/><circle cx="18" cy="12" r="1.6"/></svg></div>
         <h4>Phân tách trách nhiệm</h4>
         <ul class="dlist">
-          <li>Tách biệt rõ ràng cấp quyết định, tham mưu và giám sát.</li>
-          <li>Kiểm soát xung đột lợi ích, hạn chế "vừa đề xuất vừa thẩm định".</li>
-          <li>Tối ưu hóa phân cấp giữa Petrovietnam – PVEP – TGĐ – Ban chuyên môn.</li>
+          <li>Tách biệt cấp đề xuất, thẩm định, phê duyệt.</li>
+          <li>Kiểm soát xung đột lợi ích.</li>
+          <li>Phân cấp hợp lý giữa PVN/PVEP/Đơn vị.</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:4">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <h4>Minh bạch &amp; truy vết</h4>
         <ul class="dlist">
-          <li>Mỗi bước phê duyệt gắn liền với căn cứ pháp lý, quy chế rõ ràng.</li>
-          <li>Truy vết lịch sử duyệt, thời gian xử lý và đơn vị phụ trách.</li>
-          <li>Thuận tiện cho công tác hậu kiểm và thanh kiểm tra.</li>
+          <li>Mỗi bước gắn với căn cứ pháp lý.</li>
+          <li>Lưu vết người xử lý, thời điểm, hồ sơ.</li>
+          <li>Hỗ trợ hậu kiểm và thanh tra.</li>
         </ul>
       </div>
       <div class="card4 ac-reveal ac-reveal--zoom" style="--i:5">
         <div class="card4__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></div>
-        <h4>Quản trị dựa trên dữ liệu</h4>
+        <h4>Quản trị bằng dữ liệu</h4>
         <ul class="dlist dlist--g">
-          <li>Số hóa ma trận thẩm quyền tĩnh thành Dashboard động.</li>
-          <li>Nhận diện trực quan điểm nghẽn, chậm trễ, chồng chéo quy trình.</li>
-          <li>Giúp HĐTV &amp; Ban KSNB giám sát hệ thống theo thời gian thực (real-time).</li>
+          <li>Số hóa ma trận thẩm quyền.</li>
+          <li>Theo dõi điểm nghẽn, chậm trễ, chồng chéo.</li>
+          <li>Hỗ trợ giám sát theo thời gian thực.</li>
         </ul>
       </div>
     </div>
@@ -853,9 +853,9 @@ body{
         <div style="position:absolute; top:-24px; left:24px; background:var(--pvep-blue); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,131,199,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <span class="dom__k" style="margin-top:16px;">Đặc thù</span>
         <ul class="dlist">
-          <li>Workflow dài, nhiều giai đoạn: ODP/FDP/RFDP, CTĐT, KHLCNT, HSMT, LCNT, hợp đồng, điều chỉnh phát sinh</li>
-          <li>Nhiều chủ thể: Đơn vị điều hành, PVEP, Petrovietnam, UBQLV/CQĐDCSH, Bộ ngành, đối tác JOA/PSC</li>
-          <li>Hồ sơ phải xin ý kiến nhiều vòng, cập nhật theo phản hồi từng cấp</li>
+          <li>Workflow nhiều tầng: ODP/FDP/RFDP, CTĐT, KHLCNT, HSMT, LCNT, hợp đồng.</li>
+          <li>Nhiều chủ thể tham gia: Đơn vị điều hành, PVEP, Petrovietnam, UBQLV, Bộ ngành, JOC/PSC.</li>
+          <li>Hồ sơ phải xin ý kiến nhiều vòng, phụ thuộc phản hồi từng cấp.</li>
         </ul>
       </div>
       <div class="dom__arr ac-pop" style="--i:2; color:var(--pvep-blue); background:rgba(0,131,199,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
@@ -865,9 +865,9 @@ body{
         <div style="position:absolute; top:-24px; left:24px; background:var(--warning); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(234,88,12,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
         <span class="dom__k" style="margin-top:16px;">Khó khăn</span>
         <ul class="dlist">
-          <li>Khó xác định hồ sơ đang ở bước nào, vướng cấp nào, ai chịu trách nhiệm xử lý</li>
-          <li>Thẩm quyền phê duyệt thay đổi theo loại việc, giá trị, nguồn vốn, cấp dự án</li>
-          <li>Dễ chồng chéo giữa đề xuất, thẩm định, phê duyệt, giám sát và phối hợp</li>
+          <li>Khó xác định hồ sơ đang vướng ở bước nào.</li>
+          <li>Thẩm quyền thay đổi theo loại việc, giá trị, nguồn vốn, cấp dự án.</li>
+          <li>Dễ chồng chéo giữa đề xuất, thẩm định, phê duyệt, giám sát.</li>
         </ul>
       </div>
       <div class="dom__arr ac-pop" style="--i:4; color:var(--danger); background:rgba(220,38,38,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
@@ -877,9 +877,9 @@ body{
         <div style="position:absolute; top:-24px; left:24px; background:var(--danger); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(220,38,38,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <span class="dom__k" style="margin-top:16px;">Hệ quả</span>
         <ul class="dlist dlist--bad">
-          <li>Rủi ro tuân thủ do trình sai cấp, thiếu căn cứ hoặc thiếu bước kiểm soát</li>
-          <li>Chậm tiến độ do hồ sơ quay vòng nhiều lần, khó truy vết điểm nghẽn</li>
-          <li>Khó giám sát sau quyết định: đầu tư, mua sắm, chuyển nhượng, vay vốn, phân phối lợi nhuận</li>
+          <li>Tăng rủi ro tuân thủ do sai cấp hoặc thiếu căn cứ.</li>
+          <li>Chậm tiến độ do hồ sơ quay vòng nhiều lần.</li>
+          <li>Khó giám sát quyết định đầu tư, mua sắm, chuyển nhượng, vay vốn.</li>
         </ul>
       </div>
     </div>
