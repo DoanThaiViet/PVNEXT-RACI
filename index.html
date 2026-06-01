@@ -623,7 +623,7 @@ body{
 
 <!-- chapter rail -->
 <nav class="rail" aria-label="Chương">
-  <div class="rail__brand"><span class="rail__logo">P</span><span class="rail__title">Petrovietnam-NEXT&nbsp;2025</span></div>
+  <div class="rail__brand"><img src="LogoPVN_Original.png" style="height: 32px; width: auto; object-fit: contain;" alt="PVN Logo" /><span class="rail__title">Petrovietnam-NEXT&nbsp;2025</span></div>
   <div class="rail__sub">RACI Governance</div>
   <div class="rail__item" data-chapter="0" data-target="0"><span class="dot"></span><span class="rail__num">01</span>Tổng quan RACI</div>
   <div class="rail__item" data-chapter="1" data-target="3"><span class="dot"></span><span class="rail__num">02</span>Quản trị &amp; Giám sát</div>
@@ -744,26 +744,210 @@ body{
   </div></div>
 </section>
 
-<!-- ========================= SLIDE 4A — OECD: approve → SUPERVISE ========================= -->
+<!-- ========================= SLIDE 4A — Infographic Motion ========================= -->
 <section class="slide" data-chapter="1">
-  <div class="oecd-wm" aria-hidden="true"><span class="oecd-wm__txt">OECD</span><span class="oecd-wm__sub">CORPORATE GOVERNANCE</span></div>
-  <div class="govgraph" aria-hidden="true">
-    <span class="gg-bar ac-bar" style="--h:38%;--i:0"></span>
-    <span class="gg-bar ac-bar" style="--h:62%;--i:1"></span>
-    <span class="gg-bar ac-bar" style="--h:84%;--i:2"></span>
-    <span class="gg-bar ac-bar" style="--h:100%;--i:3"></span>
-  </div>
-  <div class="slide-content"><div class="wrap" style="text-align:center">
-    <div class="eyebrow ac-reveal" style="--i:0">Quản trị theo OECD · Vai trò mới của HĐTV</div>
-    <h2 class="swap ac-reveal" style="--i:1">HĐTV không chỉ <s class="swap__old">phê duyệt</s></h2>
-    <div class="swap__new flash ac-reveal" style="--i:2">GIÁM SÁT</div>
-    <div class="quad4a">
-      <div class="mini">Giám sát hoạt động &amp; quản trị rủi ro</div>
-      <div class="mini">Theo dõi thực hiện chiến lược</div>
-      <div class="mini">Đảm bảo kiểm soát nội bộ hiệu quả</div>
-      <div class="mini">Bảo đảm minh bạch &amp; trách nhiệm giải trình</div>
+  <div class="slide-content">
+    <div class="wrap" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding-bottom: 2rem;">
+      
+      <!-- Restored Header -->
+      <div class="head-center" style="margin-bottom: 2rem; text-align: center; width: 100%;">
+        <div class="eyebrow ac-reveal" style="--i:0">Quản trị theo OECD · Vai trò mới của HĐTV</div>
+        <h2 class="swap ac-reveal" style="--i:1">HĐTV không chỉ <s class="swap__old">phê duyệt</s></h2>
+        <div class="swap__new flash ac-reveal" style="--i:2">GIÁM SÁT</div>
+      </div>
+
+      <style>
+          .infographic-container {
+              display: flex;
+              align-items: flex-end;
+              position: relative;
+              width: 100%;
+              height: clamp(300px, 50vh, 500px); /* Fits comfortably under the header */
+              /* Đã xóa z-index: 10; để fix lỗi mix-blend-mode (lỗi không xóa được viền trắng) */
+          }
+
+          .step-info {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              color: white;
+              padding: clamp(15px, 2vw, 30px);
+              box-sizing: border-box;
+              opacity: 0;
+              transform: translateY(100px);
+              border-top: 1px solid rgba(255,255,255,0.1);
+              box-shadow: inset 0 2px 10px rgba(255,255,255,0.1);
+          }
+          
+          /* Only animate when slide is active (.ac-on) */
+          .ac-on .step-info {
+              animation: slideUp 0.8s ease-out forwards;
+          }
+
+          .step-info:hover {
+              transform: translateY(-10px) !important;
+              filter: brightness(1.1);
+              cursor: pointer;
+              box-shadow: 0 15px 30px rgba(0,0,0,0.15), inset 0 2px 10px rgba(255,255,255,0.2);
+          }
+
+          .step-1 { height: 35%; background: linear-gradient(180deg, #EBC347, #d4ae36); }
+          .ac-on .step-1 { animation-delay: 0.2s; }
+          
+          .step-2 { height: 50%; background: linear-gradient(180deg, #4CB096, #3e967f); }
+          .ac-on .step-2 { animation-delay: 0.4s; }
+          
+          .step-3 { height: 65%; background: linear-gradient(180deg, #3F9A80, #327a65); }
+          .ac-on .step-3 { animation-delay: 0.6s; }
+          
+          .step-4 { height: 80%; background: linear-gradient(180deg, #637E8C, #4f6672); position: relative; }
+          .ac-on .step-4 { animation-delay: 0.8s; }
+
+          .step-title {
+              font-size: clamp(18px, 2vw, 24px);
+              font-weight: 300;
+              margin-bottom: 12px;
+              text-align: center;
+              border-bottom: 1px solid rgba(255,255,255,0.2);
+              padding-bottom: 12px;
+          }
+
+          .step-title span {
+              font-size: clamp(28px, 3vw, 42px);
+              font-weight: 800;
+              margin-left: 8px;
+          }
+
+          .step-text {
+              font-size: clamp(13px, 1.4vw, 17px);
+              line-height: 1.5;
+              text-align: center;
+              font-weight: 500;
+              opacity: 0;
+          }
+          .ac-on .step-text {
+              animation: fadeIn 1s ease forwards;
+              animation-delay: 1.2s;
+          }
+
+          .runner {
+              position: absolute;
+              bottom: 35%; /* Sits on step 1 */
+              left: -20%;
+              width: clamp(220px, 30vw, 400px); /* Tăng kích thước cực lớn */
+              height: auto;
+              z-index: 20;
+              opacity: 0;
+              
+              /* Sử dụng lại mix-blend-mode: multiply (đã fix lỗi stacking context) */
+              mix-blend-mode: multiply;
+              filter: contrast(1.1);
+          }
+          .ac-on .runner {
+              /* Chạy từng bậc lên tới bậc 4 + hiệu ứng nghiêng người chạy */
+              animation: runUpSteps 4s ease-in-out forwards, runningMotion 0.6s infinite linear;
+              animation-delay: 0.5s, 0.5s;
+          }
+
+          .trophy {
+              position: absolute;
+              bottom: 140%; /* Nằm vút lên cao, hoàn toàn trên đầu người chạy */
+              left: 50%;
+              transform: translate(-50%, -30px);
+              width: clamp(160px, 22vw, 280px); /* Tăng kích thước cực lớn */
+              height: auto;
+              opacity: 0;
+              margin-bottom: 5px;
+              z-index: 10;
+              
+              /* Sử dụng lại mix-blend-mode: multiply */
+              mix-blend-mode: multiply;
+              filter: contrast(1.1);
+          }
+          .ac-on .trophy {
+              /* Rơi xuống sau đó nảy nhẹ liên tục */
+              animation: dropBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, floatMotion 3s ease-in-out infinite 0.8s;
+              animation-delay: 3.5s, 4.3s; /* Rơi xuống đúng lúc người chạy tới nơi */
+          }
+
+          @keyframes slideUp {
+              to { opacity: 1; transform: translateY(0); }
+          }
+
+          @keyframes fadeIn {
+              to { opacity: 1; }
+          }
+
+          /* Hiệu ứng chạy vượt các bậc thang */
+          @keyframes runUpSteps {
+              0% { bottom: 35%; left: -20%; opacity: 0; }
+              10% { bottom: 35%; left: -2%; opacity: 1; }
+              20% { bottom: 35%; left: 8%; } /* Đang ở bậc 1 */
+              
+              /* Nhảy lên bậc 2 */
+              25% { bottom: 55%; left: 16%; } /* Lên đỉnh cú nhảy */
+              30% { bottom: 50%; left: 24%; } /* Đáp xuống bậc 2 */
+              40% { bottom: 50%; left: 32%; }
+              
+              /* Nhảy lên bậc 3 */
+              45% { bottom: 70%; left: 40%; }
+              50% { bottom: 65%; left: 48%; }
+              60% { bottom: 65%; left: 56%; }
+              
+              /* Nhảy lên bậc 4 */
+              65% { bottom: 85%; left: 64%; }
+              70% { bottom: 80%; left: 72%; }
+              
+              /* Dừng lại tại bậc 4 và hoàn thành */
+              100% { bottom: 80%; left: 74%; opacity: 1; }
+          }
+
+          @keyframes dropBounce {
+              0% { opacity: 0; transform: translate(-50%, -200px); }
+              100% { opacity: 1; transform: translate(-50%, -30px); }
+          }
+
+          @keyframes runningMotion {
+              0% { transform: translateY(0) rotate(0deg); }
+              25% { transform: translateY(-12px) rotate(4deg); }
+              50% { transform: translateY(0) rotate(0deg); }
+              75% { transform: translateY(-12px) rotate(-4deg); }
+              100% { transform: translateY(0) rotate(0deg); }
+          }
+          
+          @keyframes floatMotion {
+              0% { transform: translate(-50%, -30px); }
+              50% { transform: translate(-50%, -45px); }
+              100% { transform: translate(-50%, -30px); }
+          }
+      </style>
+
+      <div class="infographic-container">
+          <img src="nguoi-chay.png" alt="Runner" class="runner">
+
+          <div class="step-info step-1">
+              <div class="step-title">STEP <span>01</span></div>
+              <div class="step-text">Giám sát hoạt động & quản trị rủi ro</div>
+          </div>
+
+          <div class="step-info step-2">
+              <div class="step-title">STEP <span>02</span></div>
+              <div class="step-text">Theo dõi thực hiện chiến lược</div>
+          </div>
+
+          <div class="step-info step-3">
+              <div class="step-title">STEP <span>03</span></div>
+              <div class="step-text">Đảm bảo kiểm soát nội bộ hiệu quả</div>
+          </div>
+
+          <div class="step-info step-4">
+              <img src="cup-vang.png" alt="Trophy" class="trophy">
+              <div class="step-title">STEP <span>04</span></div>
+              <div class="step-text">Bảo đảm minh bạch & trách nhiệm giải trình</div>
+          </div>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
 
 <!-- ========================= SLIDE 4B — OECD 4 principles ========================= -->
