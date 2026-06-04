@@ -560,6 +560,456 @@ body{
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
+
+/* ===== nx- : Triển khai (Excel / Cowork / HTML) — added slides ===== */
+.nx-sheets{ display:flex; gap:.45rem; flex-wrap:wrap; }
+.nx-sheet{ font-size:.72rem; color:var(--ink-600); background:var(--white);
+  border:1px solid var(--ac-line); border-radius:999px; padding:.34rem .8rem; }
+.nx-sheet b{ font-family:var(--font-display); color:var(--pvep-navy); margin-right:.25rem; letter-spacing:.02em; }
+
+.nx-win{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; overflow:hidden;
+  box-shadow:0 22px 60px rgba(10,42,74,.16); display:flex; flex-direction:column; }
+.nx-win__bar{ display:flex; align-items:center; gap:.45rem; padding:.55rem .9rem;
+  background:#f1f5f9; border-bottom:1px solid var(--ac-line); }
+.nx-win__dot{ width:11px; height:11px; border-radius:50%; display:inline-block; }
+.nx-win__url{ margin-left:.6rem; font-size:.76rem; color:var(--ink-500); font-weight:500; }
+.nx-gridwrap{ overflow:auto; }
+.nx-grid{ width:100%; border-collapse:collapse; font-size:clamp(.68rem,1.15vw,.92rem); }
+.nx-grid thead th{ position:sticky; top:0; background:linear-gradient(180deg,#0A2A4A,#0d355e);
+  color:#fff; font-family:var(--font-display); font-weight:700; text-align:left;
+  padding:.6rem .7rem; white-space:nowrap; letter-spacing:.01em; }
+.nx-grid tbody td{ padding:.55rem .7rem; border-bottom:1px solid #eef2f7; color:var(--ink-700); vertical-align:top; }
+.nx-grid tbody tr:nth-child(even){ background:#f8fafc; }
+.nx-grid tbody tr:hover{ background:rgba(0,131,199,.06); }
+.nx-step{ font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); }
+.nx-task{ font-weight:600; color:var(--ink-900); }
+.nx-ref{ color:var(--ink-500); font-size:.92em; }
+.nx-tag{ display:inline-block; font-family:var(--font-display); font-weight:700; font-size:.7em;
+  padding:.12em .5em; border-radius:6px; margin:.06em .15em .06em 0; white-space:nowrap; }
+.nx-t-r{ background:rgba(0,131,199,.14); color:#0083C7; }
+.nx-t-c{ background:rgba(217,119,6,.16); color:#B45309; }
+.nx-t-a{ background:rgba(0,176,80,.15); color:#15803D; }
+.nx-t-t{ background:rgba(29,78,216,.12); color:#1D4ED8; }
+
+.nx-hints{ display:flex; gap:.55rem; flex-wrap:wrap; justify-content:center; margin-top:clamp(.7rem,2vh,1.3rem); }
+.nx-hint{ font-size:clamp(.72rem,1.3vw,.92rem); font-weight:600; color:var(--pvep-navy);
+  background:rgba(0,131,199,.08); border:1px solid rgba(0,131,199,.22); border-radius:999px; padding:.4rem .9rem; }
+
+/* Cowork flow */
+.nx-flow{ display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:stretch;
+  gap:clamp(.5rem,1.4vw,1rem); margin:clamp(.7rem,2.2vh,1.5rem) 0; }
+.nx-fstep{ background:#fff; border:1px solid var(--ac-line); border-radius:14px; padding:clamp(.8rem,2vh,1.3rem);
+  box-shadow:0 10px 30px rgba(10,42,74,.08); display:flex; flex-direction:column; gap:.4rem; }
+.nx-fstep__no{ font-family:var(--font-display); font-weight:800; font-size:clamp(1.3rem,2.8vw,2rem); color:var(--pvep-blue); }
+.nx-fstep--g{ border-color:rgba(0,176,80,.4); }
+.nx-fstep--g .nx-fstep__no{ color:var(--pvep-green); }
+.nx-fstep h3{ font-family:var(--font-display); color:var(--pvep-navy); font-weight:800;
+  font-size:clamp(.92rem,1.8vw,1.2rem); line-height:1.15; }
+.nx-fstep p{ color:var(--ink-600); font-size:clamp(.78rem,1.4vw,1rem); line-height:1.4; }
+.nx-farrow{ display:flex; align-items:center; justify-content:center; color:var(--pvep-blue); font-size:1.4rem; font-weight:800; }
+@media(max-width:820px){ .nx-flow{ grid-template-columns:1fr; } .nx-farrow{ transform:rotate(90deg); } }
+
+.nx-prompt{ display:flex; align-items:flex-start; gap:.7rem; background:#0A2A4A; color:#dbeafe;
+  border-radius:12px; padding:.8rem 1rem; font-family:"SFMono-Regular",Consolas,monospace;
+  font-size:clamp(.72rem,1.25vw,.92rem); line-height:1.5; box-shadow:0 14px 36px rgba(10,42,74,.22); }
+.nx-prompt__tag{ flex:none; font-family:var(--font-display); font-weight:800; font-size:.66rem; letter-spacing:.08em;
+  text-transform:uppercase; color:#0A2A4A; background:var(--pvep-green); padding:.28rem .55rem; border-radius:6px; }
+
+.nx-brakes{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(.6rem,1.6vw,1.1rem); margin-top:clamp(.8rem,2.4vh,1.5rem); }
+@media(max-width:820px){ .nx-brakes{ grid-template-columns:1fr; } }
+.nx-brake{ border-radius:14px; padding:clamp(.8rem,2vh,1.2rem); display:flex; gap:.7rem; align-items:flex-start; }
+.nx-brake__ic{ font-size:1.4rem; line-height:1; flex:none; }
+.nx-brake h4{ font-family:var(--font-display); font-weight:800; font-size:clamp(.9rem,1.7vw,1.15rem); margin-bottom:.25rem; }
+.nx-brake p{ font-size:clamp(.76rem,1.35vw,.96rem); line-height:1.42; }
+.nx-brake--sec{ background:rgba(220,38,38,.07); border:1px solid rgba(220,38,38,.3); }
+.nx-brake--sec h4{ color:#B91C1C; } .nx-brake--sec p{ color:#7f1d1d; }
+.nx-brake--ctrl{ background:rgba(0,176,80,.08); border:1px solid rgba(0,176,80,.35); }
+.nx-brake--ctrl h4{ color:#15803D; } .nx-brake--ctrl p{ color:#14532d; }
+
+/* HTML app mock */
+.nx-app{ padding:clamp(.8rem,2vh,1.3rem); display:flex; flex-direction:column; gap:.7rem; background:#fbfdff; }
+.nx-app__search{ display:flex; gap:.5rem; align-items:center; }
+.nx-app__box{ flex:1; background:#fff; border:1px solid var(--ac-line); border-radius:10px; padding:.55rem .85rem;
+  color:var(--ink-500); font-size:clamp(.76rem,1.35vw,.95rem); }
+.nx-app__btn{ background:linear-gradient(135deg,var(--pvep-blue),var(--pvep-green)); color:#fff;
+  font-family:var(--font-display); font-weight:700; border-radius:10px; padding:.55rem 1.1rem; font-size:clamp(.76rem,1.3vw,.95rem); }
+.nx-rescard{ background:#fff; border:1px solid var(--ac-line); border-left:4px solid var(--pvep-blue);
+  border-radius:10px; padding:.7rem .9rem; box-shadow:0 6px 18px rgba(10,42,74,.06); }
+.nx-rescard__t{ font-family:var(--font-display); font-weight:700; color:var(--pvep-navy);
+  font-size:clamp(.84rem,1.5vw,1.05rem); margin-bottom:.4rem; }
+.nx-rescard__row{ display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; font-size:clamp(.72rem,1.25vw,.9rem); color:var(--ink-600); }
+.nx-rescard__ref{ margin-top:.4rem; font-size:clamp(.7rem,1.2vw,.86rem); color:var(--ink-500); }
+
+
+/* ===== real RACI matrix (form thật) ===== */
+.mx-grid{ width:100%; border-collapse:separate; border-spacing:0; table-layout:fixed;
+  font-size:clamp(.58rem,1.02vw,.8rem); }
+.mx-grid th,.mx-grid td{ border:1px solid #e6edf5; padding:.4rem .4rem; text-align:center; vertical-align:middle; }
+.mx-zoneA{ background:linear-gradient(180deg,#0A2A4A,#11406e); color:#fff;
+  font-family:var(--font-display); font-weight:800; letter-spacing:.05em; font-size:clamp(.58rem,1vw,.74rem); }
+.mx-zoneB{ background:linear-gradient(180deg,#0b6b41,#10894f); color:#fff;
+  font-family:var(--font-display); font-weight:800; letter-spacing:.05em; font-size:clamp(.58rem,1vw,.74rem); }
+.mx-htask{ background:#0A2A4A; color:#fff; text-align:left !important; font-family:var(--font-display); font-weight:700; }
+.mx-eh{ background:#eef4fb; color:var(--ink-700); font-weight:700; font-size:clamp(.5rem,.9vw,.64rem); line-height:1.12; }
+.mx-eh--b{ background:#eafaf1; }
+.mx-stt{ font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); }
+.mx-task{ text-align:left !important; font-weight:600; color:var(--ink-900);
+  font-size:clamp(.62rem,1.05vw,.8rem); line-height:1.22; }
+.mx-grid tbody tr:hover td{ background:rgba(0,131,199,.05); }
+.mx-c{ display:inline-block; font-family:var(--font-display); font-weight:800;
+  font-size:clamp(.54rem,.95vw,.7rem); padding:.18em .42em; border-radius:6px; white-space:nowrap; }
+.mx-r{ background:rgba(0,131,199,.16); color:#0083C7; }              /* Đề xuất */
+.mx-cc{ background:rgba(217,119,6,.16); color:#B45309; }             /* Thẩm định / Xem xét */
+.mx-t{ background:rgba(99,102,241,.16); color:#4f46e5; }             /* Thông qua */
+.mx-a{ background:rgba(0,176,80,.18); color:#15803D; }               /* Phê duyệt */
+.mx-pc{ background:rgba(13,148,136,.14); color:#0f766e; border:1px dashed #0f766e; } /* Phân cấp NĐ146 */
+.mx-h{ background:rgba(100,116,139,.16); color:#475569; }            /* Thực hiện */
+.mx-legend{ display:flex; flex-wrap:wrap; gap:.45rem; justify-content:center; margin-top:clamp(.55rem,1.6vh,1rem); }
+.mx-lg{ display:inline-flex; align-items:center; gap:.35rem; font-size:clamp(.6rem,1.1vw,.78rem); color:var(--ink-600); }
+.mx-lg b{ display:inline-block; font-family:var(--font-display); font-weight:800; font-size:.72em;
+  padding:.16em .42em; border-radius:5px; }
+
+/* ===== infographic polish: step circles & icons ===== */
+.nx-fstep__ic{ width:clamp(34px,4vw,46px); height:clamp(34px,4vw,46px); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  background:linear-gradient(135deg,var(--pvep-blue),var(--info)); box-shadow:0 8px 20px rgba(0,131,199,.3); }
+.nx-fstep--g .nx-fstep__ic{ background:linear-gradient(135deg,var(--pvep-green),#0b6b41); box-shadow:0 8px 20px rgba(0,176,80,.3); }
+.nx-fstep__ic svg{ width:55%; height:55%; }
+.nx-fhdr{ display:flex; align-items:center; gap:.6rem; }
+.nx-fstep__no{ margin-left:auto; opacity:.35; }
+
+/* share micro-graphic (HTML slide) */
+.nx-share{ display:flex; align-items:center; justify-content:center; gap:0; }
+.nx-share svg{ width:100%; max-width:520px; height:auto; }
+
+/* ============================================================
+   v3 ENHANCEMENTS — infographic motion (gated on .ac-on, replays on entry)
+   ============================================================ */
+
+/* ----- Excel authority matrix: row reveal · cell pop · scan sweep ----- */
+.nx-gridwrap{ position:relative; overflow:hidden; }
+/* scanning highlight that sweeps across the matrix once on entry */
+.nx-gridwrap::after{ content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:linear-gradient(115deg, transparent 35%, rgba(0,131,199,.12) 48%, rgba(0,176,80,.14) 54%, transparent 67%);
+  transform:translateX(-130%); opacity:0; }
+.ac-on .nx-gridwrap::after{ animation:mxScan 1.5s var(--ac-ease) .25s 1 both; }
+@keyframes mxScan{ 0%{transform:translateX(-130%);opacity:0;} 12%{opacity:1;} 88%{opacity:1;} 100%{transform:translateX(130%);opacity:0;} }
+
+@keyframes mxRowIn{ from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:none;} }
+.mx-grid tbody tr{ opacity:0; }
+.ac-on .mx-grid tbody tr{ animation:mxRowIn .55s var(--ac-ease) both; }
+.ac-on .mx-grid tbody tr:nth-child(1){ animation-delay:.40s; }
+.ac-on .mx-grid tbody tr:nth-child(2){ animation-delay:.52s; }
+.ac-on .mx-grid tbody tr:nth-child(3){ animation-delay:.64s; }
+.ac-on .mx-grid tbody tr:nth-child(4){ animation-delay:.76s; }
+.ac-on .mx-grid tbody tr:nth-child(5){ animation-delay:.88s; }
+
+@keyframes mxCellPop{ 0%{opacity:0; transform:scale(.5);} 60%{transform:scale(1.1);} 100%{opacity:1; transform:scale(1);} }
+.mx-grid tbody .mx-c{ opacity:0; }
+.ac-on .mx-grid tbody tr .mx-c{ animation:mxCellPop .5s var(--ac-ease-bounce) both; }
+.ac-on .mx-grid tbody tr:nth-child(1) .mx-c{ animation-delay:.58s; }
+.ac-on .mx-grid tbody tr:nth-child(2) .mx-c{ animation-delay:.70s; }
+.ac-on .mx-grid tbody tr:nth-child(3) .mx-c{ animation-delay:.82s; }
+.ac-on .mx-grid tbody tr:nth-child(4) .mx-c{ animation-delay:.94s; }
+.ac-on .mx-grid tbody tr:nth-child(5) .mx-c{ animation-delay:1.06s; }
+
+/* count-up stats in the window title bar */
+.mx-stat{ font-family:var(--font-display); font-weight:800; color:var(--pvep-blue); }
+
+/* ----- NEXT 3-card infographic: index badge + flowing connector ----- */
+.c3-idx{ position:absolute; top:.55rem; right:.85rem; z-index:2;
+  font-family:var(--font-display); font-weight:800; line-height:1;
+  font-size:clamp(1.5rem,3.2vw,2.3rem); color:rgba(10,42,74,.09); letter-spacing:.02em; }
+.c3-line{ stroke-dasharray:7 7; }
+.ac-on .c3-line{ animation:c3flow 1.1s linear infinite; }
+@keyframes c3flow{ to{ stroke-dashoffset:-28; } }
+
+/* ----- HTML lookup demo: live search box + animated result cards ----- */
+@keyframes mxResIn{ from{opacity:0; transform:translateX(18px);} to{opacity:1; transform:none;} }
+input.nx-app__box{ font-family:var(--font-body); outline:none; color:var(--ink-700);
+  transition:border-color .2s, box-shadow .2s; }
+input.nx-app__box::placeholder{ color:var(--ink-500); }
+input.nx-app__box:focus{ border-color:var(--pvep-blue); box-shadow:0 0 0 3px rgba(0,131,199,.16); }
+button.nx-app__btn{ border:none; cursor:pointer; transition:transform .15s, filter .15s; }
+button.nx-app__btn:hover{ filter:brightness(1.07); }
+button.nx-app__btn:active{ transform:scale(.95); }
+@keyframes racBusy{ 50%{ transform:scale(1.06); filter:brightness(1.14);} }
+button.nx-app__btn.is-busy{ animation:racBusy .55s var(--ac-ease); }
+.nx-app__results{ display:flex; flex-direction:column; gap:.6rem;
+  min-height:clamp(110px,20vh,200px); max-height:clamp(150px,30vh,300px); overflow-y:auto; }
+.nx-app .nx-rescard{ opacity:0; transform:translateX(18px); }
+.nx-app .nx-rescard.is-in{ animation:mxResIn .5s var(--ac-ease) both; }
+.nx-app .nx-rescard .nx-tag{ opacity:0; }
+.nx-app .nx-rescard.is-in .nx-tag{ animation:mxCellPop .45s var(--ac-ease-bounce) both; }
+.nx-noresult{ color:var(--ink-500); font-size:clamp(.82rem,1.45vw,1.02rem); padding:.6rem .2rem; }
+.nx-noresult b{ color:var(--pvep-blue); }
+
+/* ----- Slide Cowork: animated processing pipeline demo ----- */
+.cw-prompt{ display:flex; align-items:center; gap:.6rem; background:#0A2A4A; color:#dbeafe;
+  border-radius:12px; padding:.5rem .85rem; font-size:clamp(.72rem,1.4vw,.95rem);
+  box-shadow:0 10px 26px rgba(10,42,74,.18); margin-bottom:clamp(.45rem,1.4vh,.85rem); }
+.cw-prompt__tag{ flex:none; background:linear-gradient(135deg,var(--pvep-blue),var(--pvep-green));
+  color:#fff; font-family:var(--font-display); font-weight:800; font-size:.78em;
+  padding:.22em .6em; border-radius:6px; letter-spacing:.02em; }
+.cw-prompt__txt{ font-family:var(--font-body); min-height:1.25em; }
+.cw-prompt__txt::after{ content:"▋"; color:var(--pvep-green); margin-left:1px; animation:cwBlink 1s steps(1) infinite; }
+
+.cw-stage{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,.78fr) auto minmax(0,1.3fr);
+  align-items:stretch; gap:clamp(.4rem,1.4vw,1rem); }
+.cw-col{ background:#fff; border:1px solid var(--ac-line); border-radius:14px;
+  padding:clamp(.5rem,1.2vw,.9rem); box-shadow:0 10px 28px rgba(10,42,74,.07);
+  min-height:clamp(120px,21vh,205px); display:flex; flex-direction:column; gap:.4rem; }
+.cw-cap{ display:flex; align-items:center; gap:.4rem; font-family:var(--font-display);
+  font-weight:800; color:var(--pvep-navy); font-size:clamp(.7rem,1.35vw,.9rem); }
+.cw-cap b{ display:inline-grid; place-content:center; width:1.5em; height:1.5em; border-radius:50%;
+  background:var(--pvep-blue); color:#fff; font-size:.8em; flex:none; }
+
+/* input: file + flying law docs */
+.cw-file{ display:flex; justify-content:space-between; align-items:center; gap:.4rem;
+  background:#eef4fb; border-radius:9px; padding:.42rem .6rem; font-size:clamp(.66rem,1.25vw,.84rem);
+  font-weight:600; color:var(--ink-700); }
+.cw-file__rows{ color:var(--pvep-blue); font-family:var(--font-display); font-weight:800; flex:none; }
+.cw-docs{ display:flex; flex-wrap:wrap; gap:.32rem; margin-top:auto; }
+.cw-doc{ font-size:clamp(.6rem,1.15vw,.76rem); font-weight:700; color:#0f766e;
+  background:rgba(13,148,136,.12); border:1px dashed #0f766e; border-radius:7px; padding:.16em .5em; }
+.cw-on .cw-doc{ animation:cwDocFly 2.4s var(--ac-ease) infinite; }
+.cw-on .cw-doc--2{ animation-delay:.6s; } .cw-on .cw-doc--3{ animation-delay:1.2s; } .cw-on .cw-doc--4{ animation-delay:1.8s; }
+@keyframes cwDocFly{ 0%{ transform:translateX(0) scale(1); opacity:1; } 12%{ transform:translateY(-3px); }
+  72%{ opacity:1; } 100%{ transform:translateX(38px) scale(.55); opacity:0; } }
+
+/* engine: Claude brain */
+.cw-engine{ align-items:center; justify-content:center; text-align:center;
+  background:linear-gradient(160deg,#0A2A4A,#11406e); border:none; }
+.cw-engine .cw-cap{ color:#cfe6f6; justify-content:center; }
+.cw-engine .cw-cap b{ background:#fff; color:var(--pvep-navy); }
+.cw-brain{ position:relative; width:clamp(52px,8vw,80px); height:clamp(52px,8vw,80px);
+  display:grid; place-content:center; margin:.3rem auto; }
+.cw-brain svg{ width:58%; height:58%; color:#fff; position:relative; z-index:2; }
+.cw-on .cw-brain svg{ animation:cwSpin 7s linear infinite; transform-origin:center; }
+@keyframes cwSpin{ to{ transform:rotate(360deg); } }
+.cw-ring{ position:absolute; inset:0; border:2px solid rgba(120,190,240,.55); border-radius:50%; opacity:0; }
+.cw-on .cw-ring{ animation:cwPulse 2s ease-out infinite; }
+.cw-on .cw-ring--2{ animation-delay:1s; }
+@keyframes cwPulse{ 0%{ transform:scale(.55); opacity:.85; } 100%{ transform:scale(1.55); opacity:0; } }
+.cw-status{ font-size:clamp(.64rem,1.2vw,.8rem); color:#cfe6f6; min-height:2.2em; line-height:1.25; }
+
+/* output: filling table */
+.cw-table{ width:100%; border-collapse:collapse; font-size:clamp(.62rem,1.2vw,.8rem); }
+.cw-table th{ text-align:left; color:var(--ink-500); font-weight:700; font-size:.86em;
+  border-bottom:1px solid var(--ac-line); padding:.22rem .3rem; }
+.cw-table td{ padding:.26rem .3rem; border-bottom:1px solid #eef2f7; vertical-align:middle; }
+.cw-task2{ color:var(--ink-900); font-weight:600; }
+.cw-cite{ color:var(--success); font-family:var(--font-display); font-weight:700;
+  font-size:.92em; white-space:nowrap; }
+.cw-cite.is-done{ animation:cwCiteIn .45s var(--ac-ease-bounce) both; }
+@keyframes cwCiteIn{ 0%{ opacity:0; transform:translateX(8px) scale(.9);} 100%{ opacity:1; transform:none;} }
+.cw-cite .ph{ display:inline-block; width:72%; height:.72em; border-radius:4px; background:rgba(10,42,74,.10); }
+.cw-on .cw-cite .ph{ animation:cwShimmer 1.3s linear infinite; background:linear-gradient(90deg,rgba(10,42,74,.08),rgba(10,42,74,.18),rgba(10,42,74,.08)); background-size:200% 100%; }
+@keyframes cwShimmer{ to{ background-position:-200% 0; } }
+
+/* connectors */
+.cw-link{ align-self:center; color:var(--pvep-blue); font-size:clamp(1rem,2.4vw,1.6rem); font-weight:700; }
+.cw-on .cw-link{ animation:cwFlow 1.3s var(--ac-ease) infinite; }
+@keyframes cwFlow{ 0%,100%{ transform:translateX(-2px); opacity:.35; } 50%{ transform:translateX(4px); opacity:1; } }
+@keyframes cwBlink{ 50%{ opacity:0; } }
+@media(max-width:820px){ .cw-stage{ grid-template-columns:1fr; } .cw-link{ justify-self:center; transform:rotate(90deg); } }
+
+/* ============================================================
+   Slide 7 (Challenges) — stuck-document approval pipeline
+   ============================================================ */
+.ch7{ display:flex; flex-direction:column; align-items:center; gap:clamp(.8rem,2.6vh,1.7rem); }
+.ch7-pipe{ position:relative; width:min(94%,940px); height:clamp(100px,16vh,150px); }
+.ch7-track{ position:absolute; left:5%; right:5%; top:50%; height:6px; transform:translateY(-50%);
+  background:var(--ac-track); border-radius:99px; overflow:hidden; }
+.ch7-track__fill{ position:absolute; inset:0 auto 0 0; width:0; border-radius:99px;
+  background:linear-gradient(90deg,var(--pvep-blue),var(--caution),var(--danger)); }
+.ac-on .ch7-track__fill{ animation:ch7Fill 1s var(--ac-ease) .2s forwards; }
+@keyframes ch7Fill{ to{ width:100%; } }
+.ch7-stage{ position:absolute; top:50%; transform:translate(-50%,-50%); text-align:center; opacity:0; }
+.ac-on .ch7-stage{ animation:ch7Fade .5s var(--ac-ease) both; animation-delay:calc(.25s + var(--i,0)*.12s); }
+@keyframes ch7Fade{ from{opacity:0;} to{opacity:1;} }
+.ch7-stage__dot{ width:clamp(34px,5vw,48px); height:clamp(34px,5vw,48px); border-radius:50%;
+  background:#fff; border:3px solid var(--pvep-blue); display:grid; place-content:center;
+  color:var(--pvep-navy); font-family:var(--font-display); font-weight:800; margin:0 auto;
+  box-shadow:0 6px 16px rgba(10,42,74,.12); position:relative; z-index:2; }
+.ch7-stage__lb{ margin-top:.45rem; font-size:clamp(.6rem,1.15vw,.82rem); font-weight:700; color:var(--ink-600); white-space:nowrap; }
+.ch7-stage--stuck .ch7-stage__dot{ border-color:var(--danger); color:var(--danger); }
+.ac-on .ch7-stage--stuck .ch7-stage__dot{ animation:ch7Stuck 1.5s ease-in-out infinite 1s; }
+@keyframes ch7Stuck{ 0%,100%{ box-shadow:0 0 0 0 rgba(220,38,38,.5);} 50%{ box-shadow:0 0 0 13px rgba(220,38,38,0);} }
+.ch7-doc{ position:absolute; top:50%; left:5%; width:clamp(24px,3.2vw,32px); height:auto;
+  transform:translate(-50%,-50%); z-index:3; color:var(--caution); opacity:0;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.2)); }
+.ac-on .ch7-doc{ animation:ch7Travel 4.6s var(--ac-ease) infinite 1s; }
+@keyframes ch7Travel{
+  0%{ left:5%; opacity:0; } 6%{ opacity:1; }
+  18%{ left:27.5%; } 26%{ left:27.5%; }
+  40%{ left:50%; } 88%{ left:50%; }
+  94%{ left:50%; opacity:1; } 100%{ left:50%; opacity:0; } }
+.ch7-q{ position:absolute; left:50%; top:calc(50% - clamp(42px,8vh,62px)); transform:translateX(-50%) scale(.6);
+  font-family:var(--font-display); font-weight:800; color:var(--danger);
+  font-size:clamp(1.1rem,2.6vw,1.8rem); opacity:0; }
+.ac-on .ch7-q{ animation:ch7Q 4.6s ease-in-out infinite 1s; }
+@keyframes ch7Q{ 0%,40%{ opacity:0; transform:translateX(-50%) scale(.6);} 52%{ opacity:1; transform:translateX(-50%) scale(1);} 86%{ opacity:1;} 92%,100%{ opacity:0;} }
+.ch7-pains{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(.5rem,1.4vw,1rem); width:min(96%,1000px); }
+.ch7-pain{ display:flex; align-items:center; gap:.6rem; background:#fff; border:1px solid var(--ac-line);
+  border-left:4px solid var(--pvep-blue); border-radius:12px; padding:.65rem .85rem;
+  box-shadow:0 8px 22px rgba(10,42,74,.06); font-size:clamp(.72rem,1.32vw,.94rem); color:var(--ink-600); line-height:1.32; }
+.ch7-pain--w{ border-left-color:var(--warning); } .ch7-pain--d{ border-left-color:var(--danger); }
+.ch7-pain b{ color:var(--ink-900); }
+.ch7-pain__ic{ font-size:1.4em; flex:none; line-height:1; }
+@media(max-width:760px){ .ch7-pains{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   Slide 11 (Petrovietnam-NEXT) — hub & spoke radial
+   ============================================================ */
+.nx3{ display:flex; flex-direction:column; align-items:center; gap:clamp(.2rem,1vh,.6rem); }
+.nx3-hub{ position:relative; width:clamp(94px,14vw,144px); height:clamp(94px,14vw,144px); display:grid; place-content:center; }
+.nx3-hub__core{ width:74%; height:74%; border-radius:50%; display:grid; place-content:center; text-align:center;
+  background:linear-gradient(150deg,var(--pvep-blue),var(--pvep-navy)); color:#fff;
+  font-family:var(--font-display); font-weight:800; font-size:clamp(.58rem,1.15vw,.8rem); line-height:1.12;
+  box-shadow:0 12px 30px rgba(0,131,199,.32); position:relative; z-index:2; }
+.nx3-hub__ring{ position:absolute; inset:0; border-radius:50%; border:2px dashed rgba(0,131,199,.5); }
+.ac-on .nx3-hub__ring{ animation:nx3Spin 16s linear infinite; }
+.nx3-hub__ring--2{ inset:-11px; border-color:rgba(0,176,80,.4); }
+.ac-on .nx3-hub__ring--2{ animation:nx3Spin 22s linear infinite reverse; }
+@keyframes nx3Spin{ to{ transform:rotate(360deg); } }
+.nx3-hub__pulse{ position:absolute; inset:0; border-radius:50%; border:2px solid rgba(0,131,199,.5); opacity:0; }
+.ac-on .nx3-hub__pulse{ animation:nx3Pulse 2.6s ease-out infinite; }
+@keyframes nx3Pulse{ 0%{transform:scale(.72);opacity:.7;} 100%{transform:scale(1.5);opacity:0;} }
+.nx3-spokes{ width:min(72%,560px); height:clamp(26px,5.5vh,52px); display:block; }
+.nx3-spokes path{ stroke:var(--pvep-blue); stroke-width:2; fill:none; stroke-dasharray:5 6; opacity:.6; }
+.ac-on .nx3-spokes path{ animation:nx3Flow 1s linear infinite; }
+@keyframes nx3Flow{ to{ stroke-dashoffset:-22; } }
+.nx3-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(.6rem,1.8vw,1.3rem); width:min(96%,1060px); }
+.nx3-card{ background:#fff; border:1px solid var(--ac-line); border-radius:16px; text-align:center;
+  padding:clamp(.8rem,1.9vw,1.35rem) clamp(.7rem,1.5vw,1.1rem); box-shadow:0 12px 34px rgba(10,42,74,.07);
+  border-top:4px solid var(--pvep-blue); transition:transform .3s, box-shadow .3s; }
+.nx3-card:hover{ transform:translateY(-8px); box-shadow:0 22px 50px rgba(0,131,199,.16); }
+.nx3-card--g{ border-top-color:var(--pvep-green); } .nx3-card--w{ border-top-color:var(--warning); }
+.nx3-card__ic{ width:clamp(54px,7.5vw,74px); height:clamp(54px,7.5vw,74px); border-radius:50%; margin:0 auto .5rem;
+  display:grid; place-content:center; color:#fff; background:linear-gradient(135deg,var(--pvep-blue),var(--info));
+  box-shadow:0 8px 20px rgba(0,131,199,.28); }
+.nx3-card--g .nx3-card__ic{ background:linear-gradient(135deg,var(--pvep-green),#0b6b41); box-shadow:0 8px 20px rgba(0,176,80,.28); }
+.nx3-card--w .nx3-card__ic{ background:linear-gradient(135deg,var(--warning),#b45309); box-shadow:0 8px 20px rgba(234,88,12,.28); }
+.nx3-card__ic svg{ width:48%; height:48%; }
+.ac-on .nx3-card__ic{ animation:nx3Float 5s ease-in-out infinite; }
+.ac-on .nx3-card:nth-child(2) .nx3-card__ic{ animation-delay:.8s; }
+.ac-on .nx3-card:nth-child(3) .nx3-card__ic{ animation-delay:1.6s; }
+@keyframes nx3Float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
+.nx3-card__no{ font-family:var(--font-display); font-weight:800; color:var(--ink-500); font-size:.82rem; opacity:.55; letter-spacing:.05em; }
+.nx3-card h4{ font-family:var(--font-display); color:var(--pvep-navy); font-weight:800;
+  font-size:clamp(1rem,1.95vw,1.32rem); margin:.15rem 0 .4rem; }
+.nx3-card p{ color:var(--ink-600); font-size:clamp(.78rem,1.42vw,1rem); line-height:1.42; }
+@media(max-width:760px){ .nx3-cards{ grid-template-columns:1fr; } .nx3-spokes{ display:none; } }
+
+/* ============================================================
+   Slide 11 (Petrovietnam-NEXT) — orbiting applications (creative)
+   (prefix nxorb- to avoid clash with ambient .orb background spans)
+   ============================================================ */
+.nxorb{ position:relative; width:min(94%,540px); aspect-ratio:1/1; max-height:min(55vh,500px);
+  margin:clamp(.2rem,.8vh,.6rem) auto 0; --R:clamp(86px,13.5vw,146px); --node:clamp(110px,15.5vw,152px); }
+.nxorb-ring{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:50%; }
+.nxorb-ring--1{ width:calc(var(--R)*2); height:calc(var(--R)*2); border:1.5px dashed rgba(0,131,199,.4); }
+.nxorb-ring--2{ width:calc(var(--R)*2 + 52px); height:calc(var(--R)*2 + 52px); border:1.5px dashed rgba(0,176,80,.24); }
+.ac-on .nxorb-ring--1{ animation:nxorbSpin 70s linear infinite; }
+.ac-on .nxorb-ring--2{ animation:nxorbSpin 95s linear infinite reverse; }
+/* glowing core */
+.nxorb-core{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;
+  width:clamp(96px,14vw,140px); height:clamp(96px,14vw,140px); border-radius:50%;
+  display:grid; place-content:center; text-align:center; color:#fff;
+  background:radial-gradient(circle at 33% 28%, #34ace6, var(--pvep-blue) 46%, var(--pvep-navy));
+  box-shadow:0 18px 44px rgba(0,131,199,.42), inset 0 2px 14px rgba(255,255,255,.28); }
+.nxorb-core small{ display:block; font-family:var(--font-display); font-weight:700; opacity:.88;
+  font-size:clamp(.5rem,1vw,.66rem); letter-spacing:.16em; }
+.nxorb-core b{ font-family:var(--font-display); font-weight:800; font-size:clamp(1rem,2.1vw,1.5rem); letter-spacing:.03em; }
+.nxorb-core__halo{ position:absolute; inset:0; border-radius:50%; border:2px solid rgba(0,131,199,.55); opacity:0; }
+.ac-on .nxorb-core__halo{ animation:nxorbPulse 2.8s ease-out infinite; }
+@keyframes nxorbPulse{ 0%{ transform:scale(.85); opacity:.6; } 100%{ transform:scale(1.55); opacity:0; } }
+/* revolving system */
+.nxorb-system{ position:absolute; inset:0; z-index:2; }
+.ac-on .nxorb-system{ animation:nxorbSpin 28s linear infinite; }
+.nxorb:hover .nxorb-system, .nxorb:hover .nxorb-sat__spin{ animation-play-state:paused; }
+@keyframes nxorbSpin{ to{ transform:rotate(360deg); } }
+@keyframes nxorbSpinRev{ to{ transform:rotate(-360deg); } }
+.nxorb-sat{ position:absolute; top:50%; left:50%; width:var(--node); height:var(--node);
+  margin-left:calc(var(--node)/-2); margin-top:calc(var(--node)/-2);
+  transform:rotate(var(--a)) translateY(calc(-1*var(--R))) rotate(calc(-1*var(--a))); }
+.nxorb-sat__spin{ width:100%; height:100%; display:grid; place-content:center; }
+.ac-on .nxorb-sat__spin{ animation:nxorbSpinRev 28s linear infinite; }
+.nxorb-node{ display:flex; flex-direction:column; align-items:center; gap:.35rem; text-align:center; }
+.nxorb-ic{ width:clamp(56px,7.5vw,80px); height:clamp(56px,7.5vw,80px); border-radius:50%; display:grid; place-content:center;
+  color:#fff; background:linear-gradient(135deg,var(--pvep-blue),var(--info)); box-shadow:0 10px 24px rgba(0,131,199,.32); }
+.nxorb-ic svg{ width:46%; height:46%; }
+.nxorb-sat--g .nxorb-ic{ background:linear-gradient(135deg,var(--pvep-green),#0b6b41); box-shadow:0 10px 24px rgba(0,176,80,.3); }
+.nxorb-sat--w .nxorb-ic{ background:linear-gradient(135deg,var(--warning),#b45309); box-shadow:0 10px 24px rgba(234,88,12,.3); }
+.nxorb-node h4{ font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); font-size:clamp(.84rem,1.55vw,1.1rem); }
+.nxorb-node p{ font-size:clamp(.64rem,1.15vw,.82rem); color:var(--ink-600); line-height:1.3; max-width:clamp(112px,16vw,160px); }
+@media(max-width:760px){ .nxorb{ --R:clamp(78px,28vw,118px); } .nxorb-node p{ display:none; } }
+
+/* ============================================================
+   Slide 3 (Why RACI) — authority delegation flow (infographic)
+   ============================================================ */
+.df{ display:flex; flex-direction:column; align-items:center; gap:clamp(.7rem,2.2vh,1.5rem); width:100%; }
+.df-flow{ display:grid; grid-template-columns:auto minmax(40px,1fr) auto minmax(40px,1fr) auto; align-items:center;
+  gap:clamp(.3rem,1vw,.8rem); width:min(96%,1000px); }
+.df-node{ display:flex; flex-direction:column; align-items:center; gap:.45rem; text-align:center; }
+.df-badge{ display:grid; place-content:center; border-radius:16px; padding:clamp(.7rem,1.5vw,1rem) clamp(.7rem,1.6vw,1.2rem);
+  background:#fff; border:1px solid var(--ac-line); box-shadow:0 12px 30px rgba(10,42,74,.08); }
+.df-laws{ display:flex; gap:.4rem; justify-content:center; flex-wrap:wrap; }
+.df-law{ font-family:var(--font-display); font-weight:800; color:#fff; border-radius:9px;
+  padding:.3em .65em; font-size:clamp(.74rem,1.5vw,1rem); background:linear-gradient(135deg,var(--pvep-navy),var(--info)); box-shadow:0 6px 16px rgba(29,78,216,.25); }
+.df-cap{ font-size:clamp(.66rem,1.2vw,.85rem); color:var(--ink-600); line-height:1.3; max-width:clamp(120px,15vw,180px); }
+.df-cap b{ color:var(--ink-900); }
+.df-org{ width:clamp(72px,10.5vw,116px); height:clamp(72px,10.5vw,116px); border-radius:50%; display:grid; place-content:center;
+  font-family:var(--font-display); font-weight:800; color:#fff; font-size:clamp(1rem,2.1vw,1.55rem);
+  background:linear-gradient(150deg,var(--pvep-blue),var(--pvep-navy)); box-shadow:0 14px 32px rgba(0,131,199,.32); position:relative; }
+.df-org--pvep{ background:linear-gradient(150deg,var(--pvep-green),#0b6b41); box-shadow:0 14px 32px rgba(0,176,80,.34); }
+.df-org__halo{ position:absolute; inset:0; border-radius:50%; border:2px solid var(--pvep-green); opacity:0; }
+.ac-on .df-org--pvep .df-org__halo{ animation:dfPulse 2.4s ease-out infinite 1s; }
+@keyframes dfPulse{ 0%{transform:scale(.9);opacity:.6;} 100%{transform:scale(1.5);opacity:0;} }
+.df-beam{ position:relative; height:6px; border-radius:99px; background:var(--ac-track); overflow:hidden; }
+.df-beam::after{ content:""; position:absolute; inset:0; opacity:0;
+  background:repeating-linear-gradient(90deg, var(--pvep-blue) 0 10px, transparent 10px 20px); }
+.ac-on .df-beam::after{ opacity:.85; animation:dfBeam .9s linear infinite; }
+@keyframes dfBeam{ to{ transform:translateX(20px); } }
+.df-beam__lb{ position:absolute; left:50%; top:-1.6em; transform:translateX(-50%); white-space:nowrap;
+  font-size:clamp(.58rem,1.12vw,.78rem); font-weight:800; color:var(--pvep-blue); }
+.df-lead{ font-family:var(--font-display); font-weight:700; color:var(--ink-700); font-size:clamp(.8rem,1.5vw,1.05rem); text-align:center; }
+.df-scope{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(.5rem,1.5vw,1.1rem); width:min(96%,860px); }
+.df-dom{ background:#fff; border:1px solid var(--ac-line); border-radius:13px; padding:.65rem .85rem;
+  box-shadow:0 10px 26px rgba(10,42,74,.06); display:flex; flex-direction:column; gap:.45rem; }
+.df-dom__h{ display:flex; align-items:center; gap:.5rem; font-family:var(--font-display); font-weight:800; color:var(--pvep-navy);
+  font-size:clamp(.84rem,1.5vw,1.08rem); }
+.df-dom__ic{ font-size:1.3em; line-height:1; }
+.df-dom__bar{ height:7px; border-radius:99px; background:var(--ac-track); overflow:hidden; }
+.df-dom__bar i{ display:block; height:100%; width:0; border-radius:99px; background:linear-gradient(90deg,var(--pvep-green),var(--pvep-blue)); }
+.ac-on .df-dom__bar i{ animation:dfGrow 1s var(--ac-ease) forwards; }
+@keyframes dfGrow{ to{ width:100%; } }
+.ac-on .df-dom:nth-child(1) .df-dom__bar i{ animation-delay:.5s; }
+.ac-on .df-dom:nth-child(2) .df-dom__bar i{ animation-delay:.7s; }
+.ac-on .df-dom:nth-child(3) .df-dom__bar i{ animation-delay:.9s; }
+.df-out{ display:inline-flex; align-items:center; gap:.5rem; background:linear-gradient(135deg, rgba(0,131,199,.1), rgba(0,176,80,.1));
+  border:1px dashed var(--pvep-blue); border-radius:12px; padding:.55rem 1rem;
+  font-size:clamp(.78rem,1.45vw,1.04rem); color:var(--ink-900); font-weight:600; text-align:center; }
+.df-out b{ color:var(--pvep-blue); }
+@media(max-width:820px){ .df-flow{ grid-template-columns:1fr; } .df-beam{ height:22px; } .df-beam__lb{ position:static; transform:none; display:block; } .df-scope{ grid-template-columns:1fr; } }
+
+/* reduced-motion / no-JS safety: never leave content hidden */
+@media (prefers-reduced-motion:reduce){
+  .df-beam::after{ animation:none!important; opacity:.85; }
+  .df-org__halo{ animation:none!important; }
+  .df-dom__bar i{ animation:none!important; width:100%!important; }
+  .nxorb-system,.nxorb-sat__spin,.nxorb-ring,.nxorb-core__halo{ animation:none!important; }
+  .mx-grid tbody tr,.mx-grid tbody .mx-c,.nx-app .nx-rescard,.nx-rescard .nx-tag{ opacity:1!important; transform:none!important; animation:none!important; }
+  .nx-gridwrap::after{ display:none; }
+  .cw-doc,.cw-ring,.cw-brain svg,.cw-link,.cw-cite,.cw-cite .ph{ animation:none!important; }
+  .cw-prompt__txt::after{ display:none; }
+  .ch7-stage{ opacity:1!important; animation:none!important; }
+  .ch7-track__fill{ width:100%!important; animation:none!important; }
+  .ch7-doc,.ch7-q{ display:none!important; }
+  .nx3-hub__ring,.nx3-hub__ring--2,.nx3-hub__pulse,.nx3-spokes path,.nx3-card__ic{ animation:none!important; }
+}
+
 </style>
 </head>
 <body>
@@ -630,7 +1080,7 @@ body{
   <div class="rail__item" data-chapter="2" data-target="6"><span class="dot"></span><span class="rail__num">03</span>Thách thức &amp; Chuyển đổi</div>
   <div class="rail__item" data-chapter="3" data-target="8"><span class="dot"></span><span class="rail__num">04</span>Hệ thống &amp; Triển khai</div>
   <div class="rail__item" data-chapter="4" data-target="11"><span class="dot"></span><span class="rail__num">05</span>Định hướng &amp; Ứng dụng</div>
-  <div class="rail__item" data-chapter="5" data-target="14"><span class="dot"></span><span class="rail__num">06</span>Kết luận</div>
+  <div class="rail__item" data-chapter="5" data-target="15"><span class="dot"></span><span class="rail__num">06</span>Kết luận</div>
 </nav>
 
 <!-- slide counter -->
@@ -694,52 +1144,30 @@ body{
       <div class="eyebrow ac-reveal" style="--i:0">Bối cảnh quản trị</div>
       <h2 class="s-title ac-reveal" style="--i:1">Vì sao RACI ngày càng quan trọng?</h2>
     </div>
-    <div class="legal-chips">
-      <span class="chip ac-pop" style="--i:2">Luật 68</span>
-      <span class="chip ac-pop" style="--i:3">NĐ 365</span>
-      <span class="chip ac-pop" style="--i:4">NĐ 366</span>
-    </div>
-    <div class="tri" style="position:relative;">
-      <!-- Diagram line connecting cards -->
-      <div class="diagram-line ac-reveal" style="--i:5; position:absolute; top:40px; left:10%; right:10%; height:2px; background:var(--pvep-blue); opacity:0.3; z-index:0; display:none;"></div>
-      <style>@media(min-width:768px){.diagram-line{display:block;}}</style>
-
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:6; position:relative; z-index:1; background:var(--white);">
-        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--pvep-blue); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--pvep-blue);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+    <div class="df">
+      <div class="df-flow">
+        <div class="df-node ac-pop" style="--i:2">
+          <div class="df-badge"><div class="df-laws"><span class="df-law">Luật 68</span><span class="df-law">NĐ 366</span></div></div>
+          <div class="df-cap"><b>Mở rộng tự chủ DNNN</b><br>về vốn · tài sản</div>
         </div>
-        <span class="tri__k">Bối cảnh</span>
-        <ul class="dlist">
-          <li>Luật 68 &amp; NĐ 366 mở rộng tự chủ của DNNN về vốn, tài sản.</li>
-          <li>Petrovietnam phân cấp mạnh cho PVEP (vay vốn, đầu tư, mua sắm).</li>
-          <li>Yêu cầu tối ưu tiến độ xử lý các nghiệp vụ trọng yếu tại cấp PVEP.</li>
-          <li>Cần công cụ quản trị phân quyền rõ ràng và có hệ thống.</li>
-        </ul>
-      </div>
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:7; position:relative; z-index:1; background:var(--white);">
-        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--warning); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--warning);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <div class="df-beam ac-reveal" style="--i:3"><span class="df-beam__lb">mở rộng tự chủ ▸</span></div>
+        <div class="df-node ac-pop" style="--i:4">
+          <div class="df-org">PVN</div>
+          <div class="df-cap">Petrovietnam</div>
         </div>
-        <span class="tri__k">Thách thức</span>
-        <ul class="dlist">
-          <li>Ranh giới thẩm quyền (Petrovietnam - HĐTV PVEP - Ban chuyên môn) cần định vị lại.</li>
-          <li>Các giao dịch giá trị lớn (đầu tư, vay vốn) tiềm ẩn rủi ro pháp lý cao.</li>
-          <li>Quy trình nhiều cấp dễ chồng chéo, chậm trễ phê duyệt hồ sơ.</li>
-          <li>Hệ thống quy chế nội bộ chưa đồng bộ kịp tinh thần phân cấp mới.</li>
-        </ul>
-      </div>
-      <div class="tri__card ac-reveal ac-reveal--up" style="--i:8; position:relative; z-index:1; background:var(--white);">
-        <div class="icon-wrap" style="width:64px; height:64px; border-radius:50%; background:var(--bg-100); color:var(--success); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; border:2px solid var(--success);">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div class="df-beam ac-reveal" style="--i:5"><span class="df-beam__lb">phân cấp mạnh ▸</span></div>
+        <div class="df-node ac-pop" style="--i:6">
+          <div class="df-org df-org--pvep"><span class="df-org__halo"></span>PVEP</div>
+          <div class="df-cap"><b>Được trao quyền</b></div>
         </div>
-        <span class="tri__k">Yêu cầu mới</span>
-        <ul class="dlist dlist--g">
-          <li>Chuẩn hóa luồng: Đề xuất – Thẩm định – Phê duyệt – Thực hiện – Giám sát.</li>
-          <li>Gắn thẩm quyền với hạn mức, điều kiện áp dụng và căn cứ pháp lý.</li>
-          <li>Giám sát trực quan trạng thái, tiến độ và trách nhiệm từng đơn vị.</li>
-          <li>Nâng cao năng lực giám sát sau phân quyền của HĐTV &amp; Ban KSNB.</li>
-        </ul>
       </div>
+      <div class="df-lead ac-reveal" style="--i:7">PVEP được phân cấp mạnh ở 3 mảng trọng yếu:</div>
+      <div class="df-scope">
+        <div class="df-dom ac-reveal ac-reveal--up" style="--i:8"><div class="df-dom__h"><span class="df-dom__ic">💰</span>Vay vốn</div><div class="df-dom__bar"><i></i></div></div>
+        <div class="df-dom ac-reveal ac-reveal--up" style="--i:9"><div class="df-dom__h"><span class="df-dom__ic">📈</span>Đầu tư</div><div class="df-dom__bar"><i></i></div></div>
+        <div class="df-dom ac-reveal ac-reveal--up" style="--i:10"><div class="df-dom__h"><span class="df-dom__ic">🛒</span>Mua sắm</div><div class="df-dom__bar"><i></i></div></div>
+      </div>
+      <div class="df-out ac-reveal ac-reveal--up" style="--i:11">⇒ Thẩm quyền lớn hơn → cần <b>RACI</b> để kiểm soát thẩm quyền &amp; truy vết trách nhiệm.</div>
     </div>
   </div></div>
 </section>
@@ -1032,42 +1460,24 @@ body{
     <div class="head-center">
       <div class="eyebrow ac-reveal" style="--i:0">Thách thức tại các dự án / đề án (DADK)</div>
     </div>
-    <div class="domino" style="align-items:center;">
-      <div class="dom ac-reveal ac-reveal--left" style="--i:1; background:var(--white); border:2px solid var(--pvep-blue); position:relative;">
-        <div style="position:absolute; top:-24px; left:24px; background:var(--pvep-blue); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,131,199,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <span class="dom__k" style="margin-top:16px;">Đặc thù</span>
-        <ul class="dlist">
-          <li>Workflow nhiều tầng: ODP/FDP/RFDP, CTĐT, KHLCNT, HSMT, LCNT, hợp đồng.</li>
-          <li>Nhiều chủ thể tham gia: Đơn vị điều hành, PVEP, Petrovietnam, UBQLV, Bộ ngành, JOC/PSC.</li>
-          <li>Hồ sơ phải xin ý kiến nhiều vòng, phụ thuộc phản hồi từng cấp.</li>
-        </ul>
+    <div class="ch7">
+      <div class="ch7-pipe">
+        <div class="ch7-track"><span class="ch7-track__fill"></span></div>
+        <svg class="ch7-doc" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 2h7l5 5v15H6z"/><path d="M13 2v5h5" fill="#fff" opacity=".55"/><path d="M9 12h6M9 16h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".8"/></svg>
+        <span class="ch7-q">?</span>
+        <div class="ch7-stage" style="left:5%; --i:0"><div class="ch7-stage__dot">1</div><div class="ch7-stage__lb">Đề xuất</div></div>
+        <div class="ch7-stage" style="left:27.5%; --i:1"><div class="ch7-stage__dot">2</div><div class="ch7-stage__lb">Thẩm định</div></div>
+        <div class="ch7-stage ch7-stage--stuck" style="left:50%; --i:2"><div class="ch7-stage__dot">3</div><div class="ch7-stage__lb">Phê duyệt</div></div>
+        <div class="ch7-stage" style="left:72.5%; --i:3"><div class="ch7-stage__dot">4</div><div class="ch7-stage__lb">Thực hiện</div></div>
+        <div class="ch7-stage" style="left:95%; --i:4"><div class="ch7-stage__dot">5</div><div class="ch7-stage__lb">Giám sát</div></div>
       </div>
-      <div class="dom__arr ac-pop" style="--i:2; color:var(--pvep-blue); background:rgba(0,131,199,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      <div class="ch7-pains">
+        <div class="ch7-pain ac-reveal ac-reveal--up" style="--i:2"><span class="ch7-pain__ic">🧩</span><span><b>Nhiều tầng · nhiều chủ thể</b> — ODP/FDP, PVEP, PVN, UBQLV, Bộ ngành, JOC/PSC.</span></div>
+        <div class="ch7-pain ch7-pain--w ac-reveal ac-reveal--up" style="--i:3"><span class="ch7-pain__ic">⚖️</span><span><b>Thẩm quyền “trôi”</b> — đổi theo giá trị, nguồn vốn, cấp dự án.</span></div>
+        <div class="ch7-pain ch7-pain--d ac-reveal ac-reveal--up" style="--i:4"><span class="ch7-pain__ic">⏳</span><span><b>Hồ sơ quay vòng</b> — chậm tiến độ &amp; tăng rủi ro tuân thủ.</span></div>
       </div>
-      <div class="dom ac-reveal ac-reveal--left" style="--i:3; background:var(--white); border:2px solid var(--warning); position:relative;">
-        <div style="position:absolute; top:-24px; left:24px; background:var(--warning); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(234,88,12,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
-        <span class="dom__k" style="margin-top:16px;">Khó khăn</span>
-        <ul class="dlist">
-          <li>Khó xác định hồ sơ đang vướng ở bước nào.</li>
-          <li>Thẩm quyền thay đổi theo loại việc, giá trị, nguồn vốn, cấp dự án.</li>
-          <li>Dễ chồng chéo giữa đề xuất, thẩm định, phê duyệt, giám sát.</li>
-        </ul>
-      </div>
-      <div class="dom__arr ac-pop" style="--i:4; color:var(--danger); background:rgba(220,38,38,0.1); width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </div>
-      <div class="dom dom--bad ac-reveal ac-reveal--left" style="--i:5; background:var(--white); border:2px solid var(--danger); position:relative;">
-        <div style="position:absolute; top:-24px; left:24px; background:var(--danger); color:#fff; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(220,38,38,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <span class="dom__k" style="margin-top:16px;">Hệ quả</span>
-        <ul class="dlist dlist--bad">
-          <li>Tăng rủi ro tuân thủ do sai cấp hoặc thiếu căn cứ.</li>
-          <li>Chậm tiến độ do hồ sơ quay vòng nhiều lần.</li>
-          <li>Khó giám sát quyết định đầu tư, mua sắm, chuyển nhượng, vay vốn.</li>
-        </ul>
-      </div>
+      <blockquote class="punch ac-reveal ac-reveal--up" style="--i:6;--ac-delay:300ms">"Hồ sơ đã trình rồi… nhưng không ai biết đang ở bước nào."</blockquote>
     </div>
-    <blockquote class="punch ac-reveal ac-reveal--up" style="--i:7;--ac-delay:500ms">"Hồ sơ đã trình rồi… nhưng không ai biết đang ở bước nào."</blockquote>
   </div></div>
 </section>
 
@@ -1150,6 +1560,35 @@ body{
   </div></div>
 </section>
 
+<!-- ========================= SLIDE 12A — Petrovietnam-NEXT 3 directions ========================= -->
+<section class="slide" data-chapter="4">
+  <div class="slide-content"><div class="wrap">
+    <div class="head-center">
+      <div class="eyebrow ac-reveal" style="--i:0">Petrovietnam-NEXT ứng dụng được gì?</div>
+      <h2 class="s-title ac-reveal" style="--i:1"><span class="neo">Bắt đầu</span> từ workflow nhỏ nhất</h2>
+    </div>
+    <div class="nxorb">
+      <div class="nxorb-ring nxorb-ring--2"></div>
+      <div class="nxorb-ring nxorb-ring--1"></div>
+      <div class="nxorb-core"><span class="nxorb-core__halo"></span><small>PETROVIETNAM</small><b>NEXT</b></div>
+      <div class="nxorb-system">
+        <div class="nxorb-sat" style="--a:0deg"><div class="nxorb-sat__spin"><div class="nxorb-node">
+          <div class="nxorb-ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></div>
+          <h4>Workflow nội bộ</h4><p>Chuẩn hóa luồng duyệt – mua sắm – nhân sự</p>
+        </div></div></div>
+        <div class="nxorb-sat nxorb-sat--g" style="--a:120deg"><div class="nxorb-sat__spin"><div class="nxorb-node">
+          <div class="nxorb-ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h4>Tra cứu nhanh</h4><p>Quy trình &amp; thẩm quyền trong vài giây</p>
+        </div></div></div>
+        <div class="nxorb-sat nxorb-sat--w" style="--a:240deg"><div class="nxorb-sat__spin"><div class="nxorb-node">
+          <div class="nxorb-ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a6 6 0 0 1 11 0"/><path d="M18 8v6M15 11h6"/></svg></div>
+          <h4>Hỗ trợ nhân sự mới</h4><p>Onboarding: ai làm gì, trình ai duyệt</p>
+        </div></div></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
 <!-- ========================= SLIDE 10 — 5 steps ========================= -->
 <section class="slide" data-chapter="3">
   <div class="slide-content"><div class="wrap">
@@ -1177,61 +1616,43 @@ body{
 
 <!-- ========================= SLIDE 11 — Direction ========================= -->
 <section class="slide" data-chapter="4">
-  <div class="slide-content"><div class="wrap">
-    <div class="head-center">
-      <div class="eyebrow ac-reveal" style="--i:0">Định hướng phát triển</div>
-      <h2 class="s-title ac-reveal" style="--i:1">AI + ERP = <span class="neo">giám sát thời gian thực</span></h2>
-    </div>
-    <div class="duo">
-      <div class="duo__card ac-reveal ac-reveal--left" style="--i:2"><span class="duo__no">①</span><h3>AI tìm kiếm thông minh</h3><p>Hỏi đáp workflow · gợi ý đúng cấp thẩm quyền · gợi ý bước tiếp theo</p></div>
-      <div class="duo__plus ac-pop" style="--i:3"><span class="rt-dot"></span>real-time</div>
-      <div class="duo__card duo__card--g ac-reveal ac-reveal--right" style="--i:4"><span class="duo__no">②</span><h3>Kết nối ERP &amp; 1 Office</h3><p>Tự cập nhật trạng thái · hồ sơ đang ở bước nào · ai đang xử lý · cảnh báo điểm nghẽn</p></div>
-    </div>
-    <p class="note note--info ac-reveal" style="--i:6">Power BI = lớp dashboard giám sát, không thay thế ERP.</p>
-  </div></div>
-</section>
-
-<!-- ========================= SLIDE 12A — Petrovietnam-NEXT 3 directions ========================= -->
-<section class="slide" data-chapter="4">
-  <div class="slide-content"><div class="wrap">
-    <div class="head-center">
-      <div class="eyebrow ac-reveal" style="--i:0">Petrovietnam-NEXT ứng dụng được gì?</div>
-      <h2 class="s-title ac-reveal" style="--i:1"><span class="neo">Bắt đầu</span> từ workflow nhỏ nhất</h2>
-    </div>
-    <div class="cards cards--3" style="position:relative;">
-      <!-- Dashed connecting line -->
-      <svg class="ac-reveal" style="--i:1; position:absolute; top:28px; left:15%; width:70%; height:40px; z-index:0; overflow:visible; display:none;" preserveAspectRatio="none">
-        <path d="M0,0 L300,0 L600,0" stroke="var(--pvep-blue)" stroke-width="2" stroke-dasharray="6 6" fill="none" vector-effect="non-scaling-stroke"/>
-      </svg>
-      <style>@media(min-width:768px){.cards--3 > svg{display:block;}}</style>
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:2; position:relative; z-index:1; border-top:4px solid var(--pvep-blue); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-        <div class="card4__ic" style="background:var(--pvep-blue); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></div>
-        <h4 style="text-align:center; color:var(--pvep-blue); margin-bottom:12px;">Workflow nội bộ</h4>
-        <ul class="dlist">
-          <li>Chuẩn hóa các luồng phê duyệt, thanh toán, mua sắm, nhân sự.</li>
-          <li>Phân định rõ đơn vị chủ trì, đơn vị phối hợp và cấp phê duyệt.</li>
-          <li>Giảm thiểu việc xử lý hồ sơ theo thói quen hoặc kinh nghiệm cá nhân.</li>
-        </ul>
+  <div class="slide-content"><div class="wrap wrap--wide">
+    <div class="pb-head">
+      <div style="text-align:left">
+        <div class="eyebrow ac-reveal" style="--i:0">Triển khai · Bước 1 — Thao tác trực tiếp</div>
+        <h2 class="s-title s-title--sm ac-reveal" style="--i:1">Mở file Excel — <span class="neo">ma trận thẩm quyền thật</span></h2>
       </div>
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:3; position:relative; z-index:1; border-top:4px solid var(--pvep-green); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-        <div class="card4__ic" style="background:var(--pvep-green); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-        <h4 style="text-align:center; color:var(--pvep-green); margin-bottom:12px;">Tra cứu nhanh quy định</h4>
-        <ul class="dlist">
-          <li>Tra cứu tức thời quy trình, biểu mẫu và thẩm quyền tương ứng.</li>
-          <li>Định vị chính xác nơi trình ký, giảm thiểu trả lại hồ sơ.</li>
-          <li>Loại bỏ rủi ro áp dụng nhầm các quy chế đã hết hiệu lực.</li>
-        </ul>
-      </div>
-      <div class="card4 ac-reveal ac-reveal--zoom" style="--i:4; position:relative; z-index:1; border-top:4px solid var(--warning); background:rgba(255,255,255,0.95); box-shadow:0 10px 30px rgba(0,0,0,0.05);">
-        <div class="card4__ic" style="background:var(--warning); color:#fff; border-radius:50%; width:56px; height:56px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a6 6 0 0 1 11 0"/><path d="M18 8v6M15 11h6"/></svg></div>
-        <h4 style="text-align:center; color:var(--warning); margin-bottom:12px;">Hỗ trợ nhân sự mới</h4>
-        <ul class="dlist dlist--g">
-          <li>Giúp nhân viên mới nắm bắt nhanh sơ đồ phân nhiệm và luồng hồ sơ.</li>
-          <li>Tự động hướng dẫn "ai làm gì, gửi ai phê duyệt" trực quan.</li>
-          <li>Rút ngắn thời gian đào tạo nội bộ và bàn giao công việc.</li>
-        </ul>
+      <div class="nx-sheets ac-reveal ac-reveal--right" style="--i:2">
+        <span class="nx-sheet"><b>Đọc theo hàng:</b>1 việc → ai làm gì, đến cấp nào</span>
       </div>
     </div>
+    <div class="nx-win ac-reveal ac-reveal--up" style="--i:3">
+      <div class="nx-win__bar">
+        <span class="nx-win__dot" style="background:#ff5f57"></span>
+        <span class="nx-win__dot" style="background:#febc2e"></span>
+        <span class="nx-win__dot" style="background:#28c840"></span>
+        <span class="nx-win__url">RACI_Data.xlsx&nbsp;—&nbsp;<b class="mx-stat" data-count-to="158" data-count-dur="1600">158</b> đầu việc · <b class="mx-stat" data-count-to="13" data-count-dur="1600">13</b> chủ thể · <b class="mx-stat" data-count-to="19" data-count-dur="1600">19</b> văn bản</span>
+      </div>
+      <div class="nx-gridwrap">
+        <table class="mx-grid">
+          <colgroup><col style="width:7%"><col style="width:27%"><col span="4" style="width:9.5%"><col span="3" style="width:9.5%"></colgroup>
+          <thead>
+            <tr>
+              <th class="mx-htask" rowspan="2">STT</th>
+              <th class="mx-htask" rowspan="2">Nội dung công việc</th>
+              <th class="mx-zoneA" colspan="4">CẤP XỬ LÝ THEO PHÁP LUẬT</th>
+              <th class="mx-zoneB" colspan="3">THEO QUY ĐỊNH NỘI BỘ</th>
+            </tr>
+            <tr>
+              <th class="mx-eh">PVEP</th><th class="mx-eh">PVN</th><th class="mx-eh">BCT/Bộ ngành</th><th class="mx-eh">TTgCP</th>
+              <th class="mx-eh mx-eh--b">TGĐ PVEP</th><th class="mx-eh mx-eh--b">HĐTV PVEP</th><th class="mx-eh mx-eh--b">HĐTV PVN</th>
+            </tr>
+          </thead>
+          <tbody><tr><td class="mx-stt">1.1</td><td class="mx-task">Danh mục lô dầu khí, lô điều chỉnh</td><td></td><td><span class="mx-c mx-r">Đ.xuất</span></td><td><span class="mx-c mx-cc">T.định</span></td><td><span class="mx-c mx-a">P.duyệt</span></td><td></td><td></td><td></td></tr><tr><td class="mx-stt">2.1</td><td class="mx-task">Danh mục đề án điều tra cơ bản</td><td></td><td><span class="mx-c mx-r">Đ.xuất</span></td><td><span class="mx-c mx-a">P.duyệt</span></td><td><span class="mx-c mx-pc">P.cấp/P.duyệt</span></td><td></td><td></td><td><span class="mx-c mx-t">Th.qua</span></td></tr><tr><td class="mx-stt">3.1</td><td class="mx-task">Kế hoạch lựa chọn nhà thầu</td><td></td><td><span class="mx-c mx-r">Đ.xuất</span></td><td><span class="mx-c mx-a">P.duyệt</span></td><td><span class="mx-c mx-pc">P.cấp/P.duyệt</span></td><td></td><td></td><td></td></tr><tr><td class="mx-stt">3.2.1</td><td class="mx-task">Thông báo hồ sơ mời thầu</td><td></td><td><span class="mx-c mx-h">T.hiện</span></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="mx-stt">5.1</td><td class="mx-task">Chuyển nhượng quyền lợi tham gia HĐ dầu khí</td><td><span class="mx-c mx-r">Đ.xuất</span></td><td></td><td><span class="mx-c mx-a">P.duyệt</span></td><td><span class="mx-c mx-pc">P.cấp/P.duyệt</span></td><td></td><td><span class="mx-c mx-cc">X.xét</span></td><td><span class="mx-c mx-t">Th.qua</span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="mx-legend ac-reveal" style="--i:5"><span class="mx-lg"><b class="mx-r">Đ.xuất</b>Đề xuất</span><span class="mx-lg"><b class="mx-cc">T.định</b>Thẩm định</span><span class="mx-lg"><b class="mx-cc">X.xét</b>Xem xét/trình</span><span class="mx-lg"><b class="mx-t">Th.qua</b>Thông qua</span><span class="mx-lg"><b class="mx-a">P.duyệt</b>Phê duyệt</span><span class="mx-lg"><b class="mx-pc">P.cấp/P.duyệt</b>Phân cấp NĐ146</span><span class="mx-lg"><b class="mx-h">T.hiện</b>Thực hiện</span></div>
   </div></div>
 </section>
 
@@ -1239,19 +1660,106 @@ body{
 <section class="slide" data-chapter="4">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal" style="--i:0">Petrovietnam-NEXT · Hướng kiểm soát</div>
-      <h2 class="s-title ac-reveal" style="--i:1"><span class="neo">Control mindset</span> cho mọi đơn vị</h2>
+      <div class="eyebrow ac-reveal" style="--i:0">Triển khai · Bước 2 — Tự động hóa phần khó</div>
+      <h2 class="s-title ac-reveal" style="--i:1">Claude Cowork — <span class="neo">tổng hợp quy định theo file Excel</span></h2>
     </div>
-    <div class="duo duo--2">
-      <div class="duo__card ac-reveal ac-reveal--left" style="--i:2"><h3>Giám sát &amp; compliance</h3><p>Đúng workflow · đúng thẩm quyền · theo dõi overdue · truy vết trách nhiệm</p></div>
-      <div class="duo__card duo__card--g ac-reveal ac-reveal--right" style="--i:3"><h3>Quản trị rủi ro</h3><p>Xác định bước rủi ro cao · risk hotspot · điểm nghẽn phê duyệt</p></div>
+    <div class="cw-prompt ac-reveal" style="--i:2">
+      <span class="cw-prompt__tag">Prompt</span>
+      <span class="cw-prompt__txt" id="cwPrompt"></span>
     </div>
-    <div class="benefits">
-      <span class="ben ac-pop" style="--i:5">Giảm rủi ro</span>
-      <span class="ben ac-pop" style="--i:6">Tăng minh bạch</span>
-      <span class="ben ac-pop" style="--i:7">Hỗ trợ KTNB / QTRR</span>
-      <span class="ben ac-pop" style="--i:8">Hỗ trợ lãnh đạo ra quyết định</span>
+    <div class="cw-stage" id="cwStage">
+      <!-- ① INPUT -->
+      <div class="cw-col cw-in ac-reveal ac-reveal--left" style="--i:3">
+        <div class="cw-cap"><b>1</b> Nạp dữ liệu</div>
+        <div class="cw-file"><span>📊 RACI_Data.xlsx</span><span class="cw-file__rows">158 dòng</span></div>
+        <div class="cw-docs">
+          <span class="cw-doc cw-doc--1">Luật DK</span>
+          <span class="cw-doc cw-doc--2">NĐ 45</span>
+          <span class="cw-doc cw-doc--3">NĐ 146</span>
+          <span class="cw-doc cw-doc--4">Thông tư</span>
+        </div>
+      </div>
+      <div class="cw-link ac-reveal" style="--i:4">⟶</div>
+      <!-- ② ENGINE -->
+      <div class="cw-col cw-engine ac-reveal ac-reveal--zoom" style="--i:5">
+        <div class="cw-cap"><b>2</b> Cowork xử lý</div>
+        <div class="cw-brain">
+          <span class="cw-ring"></span><span class="cw-ring cw-ring--2"></span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.6l1.9 7.3 7.1-2-5.2 5.1 5.2 5.1-7.1-2L12 22.4l-1.9-7.3-7.1 2 5.2-5.1L3 6.9l7.1 2z"/></svg>
+        </div>
+        <div class="cw-status" id="cwStatus">Đọc DIM_TASK…</div>
+      </div>
+      <div class="cw-link ac-reveal" style="--i:6">⟶</div>
+      <!-- ③ OUTPUT -->
+      <div class="cw-col cw-out ac-reveal ac-reveal--right" style="--i:7">
+        <div class="cw-cap"><b>3</b> Nhận bản nháp</div>
+        <table class="cw-table">
+          <thead><tr><th>Việc</th><th>Căn cứ pháp lý</th></tr></thead>
+          <tbody>
+            <tr><td class="cw-task2">Chuyển nhượng quyền lợi</td><td class="cw-cite" data-cite="Luật DK Đ.36.2 · NĐ45 Đ.33"><span class="ph"></span></td></tr>
+            <tr><td class="cw-task2">Danh mục lô dầu khí</td><td class="cw-cite" data-cite="Luật DK Đ.7.2 · NĐ45 Đ.12"><span class="ph"></span></td></tr>
+            <tr><td class="cw-task2">Kế hoạch phát triển mỏ</td><td class="cw-cite" data-cite="Luật DK Đ.42 · NĐ45 Đ.24"><span class="ph"></span></td></tr>
+            <tr><td class="cw-task2">Lựa chọn nhà thầu</td><td class="cw-cite" data-cite="Luật Đấu thầu · NĐ24"><span class="ph"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <div class="nx-brakes">
+      <div class="nx-brake nx-brake--sec ac-reveal ac-reveal--up" style="--i:8">
+        <span class="nx-brake__ic">🔒</span>
+        <div><h4>Phanh bảo mật</h4>
+        <p>Chỉ đưa văn bản công khai cho AI. Không đưa văn bản phân cấp nội bộ, hợp đồng, số liệu mỏ lên công cụ công khai.</p></div>
+      </div>
+      <div class="nx-brake nx-brake--ctrl ac-reveal ac-reveal--up" style="--i:9">
+        <span class="nx-brake__ic">✓</span>
+        <div><h4>Phanh kiểm soát</h4>
+        <p>Output của AI là bản nháp ~70%, không phải kết luận. Thẩm quyền phải đối chiếu lại điều khoản gốc trước khi dùng.</p></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="slide" data-chapter="4">
+  <div class="slide-content"><div class="wrap wrap--wide">
+    <div class="pb-head">
+      <div style="text-align:left">
+        <div class="eyebrow ac-reveal" style="--i:0">Triển khai · Bước 3 — Chia sẻ cho cả nhóm</div>
+        <h2 class="s-title s-title--sm ac-reveal" style="--i:1">Một file HTML — <span class="neo">tra cứu thẩm quyền, không cần license</span></h2>
+      </div>
+      <div class="nx-share ac-reveal ac-reveal--right" style="--i:2"><svg viewBox="0 0 520 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="28" width="40" height="34" rx="6" fill="#0083C7"/>
+  <path d="M16 38h22M16 45h22M16 52h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M52 45H120M52 45c40 0 40 -22 80 -22M52 45c40 0 40 22 80 22" stroke="#94a3b8" stroke-width="2" fill="none"/>
+  <g fill="#00B050">
+    <circle cx="150" cy="23" r="11"/><circle cx="150" cy="45" r="11"/><circle cx="150" cy="67" r="11"/>
+  </g>
+  <g fill="#fff"><circle cx="150" cy="20" r="3.4"/><circle cx="150" cy="42" r="3.4"/><circle cx="150" cy="64" r="3.4"/></g>
+  <g fill="#fff"><path d="M144 30c0-3.3 2.7-6 6-6s6 2.7 6 6z"/><path d="M144 52c0-3.3 2.7-6 6-6s6 2.7 6 6z"/><path d="M144 74c0-3.3 2.7-6 6-6s6 2.7 6 6z"/></g>
+  <text x="185" y="50" font-family="Sora,sans-serif" font-size="15" font-weight="700" fill="#0A2A4A">1 file HTML → cả nhóm tra cứu, miễn phí</text>
+</svg></div>
+    </div>
+    <div class="nx-win ac-reveal ac-reveal--up" style="--i:3">
+      <div class="nx-win__bar">
+        <span class="nx-win__dot" style="background:#ff5f57"></span>
+        <span class="nx-win__dot" style="background:#febc2e"></span>
+        <span class="nx-win__dot" style="background:#28c840"></span>
+        <span class="nx-win__url">tra-cuu-tham-quyen.html&nbsp;—&nbsp;mở bằng trình duyệt, không cần cài đặt</span>
+      </div>
+      <div class="nx-app">
+        <div class="nx-app__search">
+          <input class="nx-app__box" id="racQuery" type="text" autocomplete="off" spellcheck="false"
+                 placeholder="🔎  Gõ từ khoá: FDP, ODP, chuyển nhượng, lô dầu khí…" />
+          <button class="nx-app__btn" id="racBtn" type="button">Tra cứu</button>
+        </div>
+        <div class="nx-app__results" id="racResults"></div>
+      </div>
+    </div>
+    <div class="nx-hints ac-reveal" style="--i:5">
+      <span class="nx-hint">▸ Chạy trên mọi trình duyệt</span>
+      <span class="nx-hint">▸ Gửi email là dùng được</span>
+      <span class="nx-hint">▸ Lọc tức thì, không cần internet</span>
+    </div>
+    <p class="note ac-reveal" style="--i:6">Kiểm soát: nếu file chứa dữ liệu phân cấp nội bộ thì là tài liệu nội bộ — phát qua kênh kiểm soát, không đăng công khai.</p>
   </div></div>
 </section>
 
@@ -1416,6 +1924,213 @@ body{
   }
   size(); loop();
   window.addEventListener("resize", size);
+})();
+
+/* =====================================================================
+   HTML lookup demo (slide "Một file HTML") — live search + motion.
+   Type a keyword (e.g. FDP) → matching authority records animate in.
+   Also auto-types "FDP" once when the slide first appears (hands-free).
+   ===================================================================== */
+(function(){
+  var input = document.getElementById("racQuery");
+  var btn   = document.getElementById("racBtn");
+  var out   = document.getElementById("racResults");
+  if (!input || !btn || !out) return;
+  var MAX = 3;
+
+  // role tag class: r = Đề xuất, c = Thẩm định/Xem xét, a = Phê duyệt
+  var DATA = [
+    { id:"4.2", t:"Kế hoạch phát triển mỏ (FDP)",
+      k:["fdp","phat trien mo","field development plan","ke hoach phat trien mo"],
+      rows:[["Đề xuất","r","Người điều hành · PVEP"],["Thẩm định","c","PVN"],["Phê duyệt","a","Thủ tướng CP"]],
+      ref:"Luật Dầu khí Đ.42 · NĐ 45 Đ.24" },
+    { id:"4.1", t:"Kế hoạch đại cương phát triển mỏ (ODP)",
+      k:["odp","dai cuong","outline development plan"],
+      rows:[["Đề xuất","r","Người điều hành · PVEP"],["Thẩm định","c","PVN"],["Phê duyệt","a","PVN / UBQLV"]],
+      ref:"Luật Dầu khí Đ.41 · NĐ 45 Đ.23" },
+    { id:"4.3", t:"Kế hoạch phát triển mỏ điều chỉnh (RFDP)",
+      k:["rfdp","revised fdp","dieu chinh fdp","phat trien mo dieu chinh"],
+      rows:[["Đề xuất","r","Người điều hành · PVEP"],["Thẩm định","c","PVN"],["Phê duyệt","a","Thủ tướng CP / UBQLV"]],
+      ref:"Luật Dầu khí Đ.42 · NĐ 45 Đ.25" },
+    { id:"5.1", t:"Chuyển nhượng quyền lợi tham gia hợp đồng dầu khí",
+      k:["chuyen nhuong","quyen loi tham gia","farm in","farm out","5.1"],
+      rows:[["Đề xuất","r","PVEP"],["Xem xét","c","HĐTV PVEP"],["Phê duyệt","a","BCT · TTgCP"]],
+      ref:"Luật Dầu khí Đ.36.2 · NĐ 45 Đ.33 · NĐ 146 Đ.4.7" },
+    { id:"1.1", t:"Danh mục lô dầu khí, lô điều chỉnh",
+      k:["lo dau khi","danh muc lo","block","1.1"],
+      rows:[["Đề xuất","r","PVN"],["Thẩm định","c","BCT/Bộ ngành"],["Phê duyệt","a","TTgCP"]],
+      ref:"Luật Dầu khí Đ.7.2 · NĐ 45 Đ.12" },
+    { id:"3.1", t:"Kế hoạch lựa chọn nhà thầu (KHLCNT)",
+      k:["khlcnt","lua chon nha thau","dau thau","bidding"],
+      rows:[["Đề xuất","r","PVEP"],["Phê duyệt","a","HĐTV PVEP"]],
+      ref:"Luật Đấu thầu · NĐ 24" }
+  ];
+
+  function norm(s){
+    return (s||"").toString().toLowerCase()
+      .normalize("NFD").replace(/[̀-ͯ]/g,"")
+      .replace(/đ/g,"d");
+  }
+  function esc(s){ return (s||"").replace(/[&<>"]/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+
+  function score(rec, q){
+    if (!q) return 1;
+    var nt = norm(rec.t), best = -1;
+    if (nt.indexOf(q) >= 0) best = nt.indexOf(q)===0 ? 0 : 1;
+    for (var i=0;i<rec.k.length;i++){
+      var kw = norm(rec.k[i]);
+      if (kw.indexOf(q) >= 0){ var s = kw.indexOf(q)===0 ? 0 : 1; if (best<0||s<best) best=s; }
+    }
+    return best; // -1 = no match; 0 = prefix; 1 = contains
+  }
+
+  function cardHTML(rec){
+    var tags = rec.rows.map(function(r){
+      return '<span class="nx-tag nx-t-'+r[1]+'">'+esc(r[0])+'</span>'+esc(r[2]);
+    }).join(" ");
+    return '<div class="nx-rescard__t">'+esc(rec.id)+' · '+esc(rec.t)+'</div>'+
+           '<div class="nx-rescard__row">'+tags+'</div>'+
+           '<div class="nx-rescard__ref">📎 Căn cứ: '+esc(rec.ref)+'</div>';
+  }
+
+  function render(query){
+    var q = norm(query).trim();
+    var list = DATA
+      .map(function(r){ return { r:r, s:score(r,q) }; })
+      .filter(function(o){ return o.s >= 0; })
+      .sort(function(a,b){ return a.s - b.s; })
+      .slice(0, MAX)
+      .map(function(o){ return o.r; });
+
+    out.innerHTML = "";
+    if (!list.length){
+      out.innerHTML = '<div class="nx-noresult">Không tìm thấy mục phù hợp với “<b>'+esc(query)+'</b>”.</div>';
+      return;
+    }
+    list.forEach(function(rec, i){
+      var card = document.createElement("div");
+      card.className = "nx-rescard";
+      card.innerHTML = cardHTML(rec);
+      card.style.animationDelay = (i*0.12)+"s";
+      out.appendChild(card);
+      var tags = card.querySelectorAll(".nx-tag");
+      for (var k=0;k<tags.length;k++){ tags[k].style.animationDelay = (0.18 + i*0.12 + k*0.06)+"s"; }
+      void card.offsetWidth;          // reflow so the animation replays
+      card.classList.add("is-in");
+    });
+  }
+
+  function doSearch(){
+    btn.classList.remove("is-busy"); void btn.offsetWidth; btn.classList.add("is-busy");
+    render(input.value);
+  }
+
+  btn.addEventListener("click", doSearch);
+  input.addEventListener("keydown", function(e){ if (e.key === "Enter") doSearch(); });
+  input.addEventListener("input", function(){ userTouched = true; render(input.value); });
+  input.addEventListener("focus", function(){ userTouched = true; });
+
+  // initial state: show the headline records
+  render("");
+
+  // auto-demo: type "FDP" the first time the slide is shown (skips if user interacts)
+  var userTouched = false, demoed = false;
+  var slide = input.closest(".slide");
+  function typeDemo(){
+    if (demoed || userTouched) return; demoed = true;
+    var word = "FDP", i = 0; input.value = "";
+    (function tick(){
+      if (userTouched) return;
+      if (i <= word.length){ input.value = word.slice(0, i++); render(input.value); setTimeout(tick, 190); }
+      else { setTimeout(function(){ if (!userTouched) doSearch(); }, 220); }
+    })();
+  }
+  if (slide && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting && e.intersectionRatio >= 0.55) setTimeout(typeDemo, 650); });
+    }, { threshold:[0.55] });
+    io.observe(slide);
+  } else {
+    setTimeout(typeDemo, 1200);
+  }
+})();
+
+/* =====================================================================
+   Cowork pipeline demo (slide "Claude Cowork") — loops while visible:
+   prompt types in → law docs flow into the engine → "Căn cứ pháp lý"
+   column fills row-by-row. Pauses when the slide is off-screen.
+   ===================================================================== */
+(function(){
+  var stage = document.getElementById("cwStage");
+  if (!stage) return;
+  var promptEl = document.getElementById("cwPrompt");
+  var statusEl = document.getElementById("cwStatus");
+  var cites = [].slice.call(stage.querySelectorAll(".cw-cite"));
+  var PROMPT = "“Đọc DIM_TASK, đối chiếu Luật Dầu khí & NĐ 45, điền cột Căn cứ pháp lý theo từng Step_ID.”";
+  var STEPS = ["Đọc DIM_TASK…", "Đối chiếu Luật & Nghị định…", "Điền cột “Căn cứ pháp lý”…"];
+  var timers = [], running = false;
+  function clearT(){ for (var i=0;i<timers.length;i++) clearTimeout(timers[i]); timers = []; }
+  function later(fn, ms){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+
+  function reset(){
+    cites.forEach(function(c){ c.classList.remove("is-done"); c.innerHTML = '<span class="ph"></span>'; });
+    if (promptEl) promptEl.textContent = "";
+    if (statusEl) statusEl.textContent = STEPS[0];
+  }
+  function typePrompt(done){
+    var i = 0;
+    (function tick(){
+      if (!running) return;
+      if (i <= PROMPT.length){ promptEl.textContent = PROMPT.slice(0, i++); later(tick, 24); }
+      else done();
+    })();
+  }
+  function fill(idx){
+    if (!running) return;
+    if (idx >= cites.length){
+      statusEl.textContent = "✓ Bản nháp ~70% — chờ thẩm quyền rà soát";
+      later(cycle, 2800);
+      return;
+    }
+    var c = cites[idx];
+    c.textContent = "📎 " + c.getAttribute("data-cite");
+    c.classList.add("is-done");
+    statusEl.textContent = STEPS[2];
+    later(function(){ fill(idx + 1); }, 760);
+  }
+  function cycle(){
+    if (!running) return;
+    reset();
+    later(function(){
+      typePrompt(function(){
+        statusEl.textContent = STEPS[1];
+        later(function(){ fill(0); }, 550);
+      });
+    }, 400);
+  }
+  function start(){ if (running) return; running = true; stage.classList.add("cw-on"); cycle(); }
+  function stop(){ running = false; stage.classList.remove("cw-on"); clearT(); }
+
+  // reduced motion: show the finished state, no looping
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    cites.forEach(function(c){ c.classList.add("is-done"); c.textContent = "📎 " + c.getAttribute("data-cite"); });
+    if (promptEl) promptEl.textContent = PROMPT;
+    if (statusEl) statusEl.textContent = "✓ Bản nháp ~70%";
+    return;
+  }
+
+  var slide = stage.closest(".slide");
+  if (slide && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting && e.intersectionRatio >= 0.55) start(); else stop();
+      });
+    }, { threshold:[0.55] });
+    io.observe(slide);
+  } else {
+    reset(); start();
+  }
 })();
 </script>
 </body>
