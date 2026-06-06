@@ -1136,7 +1136,7 @@ button.nx-app__btn.is-busy{ animation:racBusy .55s var(--ac-ease); }
 <section class="slide" data-chapter="0" style="background-color: #f8fafc;">
   <!-- VIDEO BACKGROUND -->
   <div class="video-bg-wrap" style="position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #f8fafc;">
-    <video autoplay muted loop playsinline src="assets/offshore-motion.mp4" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: contrast(1.05) brightness(1.1); pointer-events: none;"></video>
+    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" src="assets/offshore-motion.mp4" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: contrast(1.05) brightness(1.1); pointer-events: none;"></video>
     <!-- Overlay blend từ trắng (trái) sang trong suốt/xanh biển (phải) -->
     <div class="video-overlay" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 15%, rgba(241,245,249,0.5) 50%, rgba(0,131,199,0.1) 100%);"></div>
   </div>
@@ -2207,6 +2207,36 @@ button.nx-app__btn.is-busy{ animation:racBusy .55s var(--ac-ease); }
   } else {
     reset(); start();
   }
+})();
+
+/* =====================================================================
+   Hero video — force playback on mobile (autoplay is often blocked even
+   for muted+playsinline: Low-Power Mode, Data Saver, first-load policies).
+   Retry on first user interaction and whenever the hero slide is in view.
+   ===================================================================== */
+(function(){
+  var v = document.getElementById("heroVideo");
+  if (!v) return;
+  v.muted = true; v.defaultMuted = true; v.playsInline = true;  // belt & suspenders for iOS
+  function tryPlay(){
+    var p = v.play();
+    if (p && typeof p.catch === "function") p.catch(function(){ /* blocked — wait for a tap */ });
+  }
+  tryPlay();
+  // Replay when slide 1 scrolls back into view
+  if ("IntersectionObserver" in window){
+    var heroSlide = v.closest(".slide");
+    if (heroSlide){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting) tryPlay(); });
+      }, { threshold:[0.4] }).observe(heroSlide);
+    }
+  }
+  // First touch/click anywhere kicks off playback if autoplay was denied
+  function kick(){ tryPlay(); }
+  ["touchstart","click","pointerdown"].forEach(function(ev){
+    document.addEventListener(ev, kick, { once:true, passive:true });
+  });
 })();
 </script>
 </body>
