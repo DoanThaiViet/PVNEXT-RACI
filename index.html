@@ -1135,10 +1135,10 @@ button.nx-app__btn.is-busy{ animation:racBusy .55s var(--ac-ease); }
 <!-- ========================= SLIDE 1 — HERO ========================= -->
 <section class="slide" data-chapter="0" style="background-color: #f8fafc;">
   <!-- VIDEO BACKGROUND -->
-  <div class="video-bg-wrap" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; background: #f8fafc;">
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" src="assets/offshore-motion.mp4" style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: contrast(1.05) brightness(1.1); pointer-events: none; transform: translateZ(0);"></video>
+  <div class="video-bg-wrap" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; background: #f8fafc; pointer-events: none;">
+    <video id="heroVideo" autoplay muted loop playsinline="true" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" disablePictureInPicture disableRemotePlayback preload="auto" src="assets/offshore-motion.mp4" style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: contrast(1.05) brightness(1.1); pointer-events: none; transform: translateZ(0); z-index: 1;"></video>
     <!-- Overlay blend từ trắng (trái) sang trong suốt/xanh biển (phải) -->
-    <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 15%, rgba(241,245,249,0.5) 50%, rgba(0,131,199,0.1) 100%);"></div>
+    <div class="video-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 15%, rgba(241,245,249,0.5) 50%, rgba(0,131,199,0.1) 100%); z-index: 2; pointer-events: none;"></div>
   </div>
 
   <div class="slide-content" style="position: relative; z-index: 2;">
